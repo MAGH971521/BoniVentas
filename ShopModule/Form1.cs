@@ -9,6 +9,27 @@ namespace ShopModule
         public LoginForm()
         {
             InitializeComponent();
+
+            EffectEvents();
+        }
+
+        private void EffectEvents()
+        {
+            this.lblTitle.Hide();
+            this.lblUsername.Hide();
+            this.txtUsername.Hide();
+            this.lblPswd.Hide();
+            this.txtPswd.Hide();
+            this.btnAccess.Hide();
+            this.lnkDataRecovery.Hide();
+
+            animateComponents.Show(lblTitle);
+            animateComponents.Show(lblUsername);
+            animateComponents.Show(txtUsername);
+            animateComponents.Show(lblPswd);
+            animateComponents.Show(txtPswd);
+            animateComponents.Show(btnAccess);
+            animateComponents.Show(lnkDataRecovery);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -50,9 +71,15 @@ namespace ShopModule
 
         private void btnAccess_Click(object sender, EventArgs e)
         {
-            MenuForm mF = new MenuForm();
-            mF.Show();
+            Forms.MenuForm menu = new Forms.MenuForm("BoniVentas - Menu", pbLogo.Image);
+            menu.Show();
             this.Hide();
+        }
+
+        private void lnkDataRecovery_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Forms.DataRecoveryForm dF = new Forms.DataRecoveryForm("Recuperacion de Datos");
+            dF.Show();
         }
     }
 }
