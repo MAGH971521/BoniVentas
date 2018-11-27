@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
-using DBConnections;
 
 namespace AgendaBeta
 {

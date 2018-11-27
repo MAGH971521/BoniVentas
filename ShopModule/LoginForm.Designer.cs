@@ -142,6 +142,7 @@
             this.txtPswd.PasswordChar = '*';
             this.txtPswd.Size = new System.Drawing.Size(250, 25);
             this.txtPswd.TabIndex = 5;
+            this.txtPswd.TextChanged += new System.EventHandler(this.txtPswd_onChangeText);
             // 
             // txtUsername
             // 
@@ -152,6 +153,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(250, 25);
             this.txtUsername.TabIndex = 4;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_onChangeText);
             // 
             // lblPswd
             // 

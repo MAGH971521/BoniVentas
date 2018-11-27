@@ -36,7 +36,6 @@
             this.btnAccess_Reporte = new ShopModule.CustomControls.LButton();
             this.pnlImage = new System.Windows.Forms.Panel();
             this.pbUserImage = new System.Windows.Forms.PictureBox();
-            this.MainBoard = new ShopModule.Forms.Dashboard();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.slideMenu.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -46,17 +45,17 @@
             // 
             // WindowName
             // 
-            this.WindowName.Size = new System.Drawing.Size(900, 35);
+            this.WindowName.Size = new System.Drawing.Size(1080, 35);
             // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Location = new System.Drawing.Point(830, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1010, 0);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(865, 0);
+            this.btnClose.Location = new System.Drawing.Point(1045, 0);
             // 
             // slideMenu
             // 
@@ -66,7 +65,7 @@
             this.slideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.slideMenu.Location = new System.Drawing.Point(0, 35);
             this.slideMenu.Name = "slideMenu";
-            this.slideMenu.Size = new System.Drawing.Size(200, 615);
+            this.slideMenu.Size = new System.Drawing.Size(200, 685);
             this.slideMenu.TabIndex = 1;
             // 
             // pnlMenu
@@ -78,7 +77,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMenu.Location = new System.Drawing.Point(0, 150);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(200, 465);
+            this.pnlMenu.Size = new System.Drawing.Size(200, 535);
             this.pnlMenu.TabIndex = 1;
             // 
             // btnAccess_Productos
@@ -86,12 +85,12 @@
             this.btnAccess_Productos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccess_Productos.FlatAppearance.BorderSize = 0;
             this.btnAccess_Productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccess_Productos.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnAccess_Productos.ForeColor = System.Drawing.Color.White;
-            this.btnAccess_Productos.Location = new System.Drawing.Point(0, 90);
-            this.btnAccess_Productos.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
+            this.btnAccess_Productos.Location = new System.Drawing.Point(0, 135);
             this.btnAccess_Productos.Name = "btnAccess_Productos";
-            this.btnAccess_Productos.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnAccess_Productos.Size = new System.Drawing.Size(200, 30);
+            this.btnAccess_Productos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAccess_Productos.Size = new System.Drawing.Size(200, 45);
             this.btnAccess_Productos.TabIndex = 3;
             this.btnAccess_Productos.Text = "Productos";
             this.btnAccess_Productos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,12 +101,12 @@
             this.btnAccess_Ventas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccess_Ventas.FlatAppearance.BorderSize = 0;
             this.btnAccess_Ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccess_Ventas.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnAccess_Ventas.ForeColor = System.Drawing.Color.White;
-            this.btnAccess_Ventas.Location = new System.Drawing.Point(0, 60);
-            this.btnAccess_Ventas.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
+            this.btnAccess_Ventas.Location = new System.Drawing.Point(0, 90);
             this.btnAccess_Ventas.Name = "btnAccess_Ventas";
-            this.btnAccess_Ventas.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnAccess_Ventas.Size = new System.Drawing.Size(200, 30);
+            this.btnAccess_Ventas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAccess_Ventas.Size = new System.Drawing.Size(200, 45);
             this.btnAccess_Ventas.TabIndex = 2;
             this.btnAccess_Ventas.Text = "Ventas";
             this.btnAccess_Ventas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,12 +117,12 @@
             this.btnAccess_Compras.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccess_Compras.FlatAppearance.BorderSize = 0;
             this.btnAccess_Compras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccess_Compras.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnAccess_Compras.ForeColor = System.Drawing.Color.White;
-            this.btnAccess_Compras.Location = new System.Drawing.Point(0, 30);
-            this.btnAccess_Compras.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
+            this.btnAccess_Compras.Location = new System.Drawing.Point(0, 45);
             this.btnAccess_Compras.Name = "btnAccess_Compras";
-            this.btnAccess_Compras.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnAccess_Compras.Size = new System.Drawing.Size(200, 30);
+            this.btnAccess_Compras.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAccess_Compras.Size = new System.Drawing.Size(200, 45);
             this.btnAccess_Compras.TabIndex = 0;
             this.btnAccess_Compras.Text = "Compras";
             this.btnAccess_Compras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,12 +133,12 @@
             this.btnAccess_Reporte.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccess_Reporte.FlatAppearance.BorderSize = 0;
             this.btnAccess_Reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccess_Reporte.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnAccess_Reporte.ForeColor = System.Drawing.Color.White;
             this.btnAccess_Reporte.Location = new System.Drawing.Point(0, 0);
-            this.btnAccess_Reporte.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.btnAccess_Reporte.Name = "btnAccess_Reporte";
-            this.btnAccess_Reporte.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnAccess_Reporte.Size = new System.Drawing.Size(200, 30);
+            this.btnAccess_Reporte.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAccess_Reporte.Size = new System.Drawing.Size(200, 45);
             this.btnAccess_Reporte.TabIndex = 1;
             this.btnAccess_Reporte.Text = "Reporte General";
             this.btnAccess_Reporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,26 +162,15 @@
             this.pbUserImage.TabIndex = 0;
             this.pbUserImage.TabStop = false;
             // 
-            // MainBoard
-            // 
-            this.MainBoard.BackColor = System.Drawing.Color.White;
-            this.MainBoard.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.MainBoard.Location = new System.Drawing.Point(225, 43);
-            this.MainBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MainBoard.Name = "MainBoard";
-            this.MainBoard.Size = new System.Drawing.Size(650, 600);
-            this.MainBoard.TabIndex = 2;
-            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 650);
-            this.Controls.Add(this.MainBoard);
+            this.ClientSize = new System.Drawing.Size(1080, 720);
             this.Controls.Add(this.slideMenu);
             this.Name = "MenuForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Controls.SetChildIndex(this.slideMenu, 0);
-            this.Controls.SetChildIndex(this.MainBoard, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.slideMenu.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
@@ -202,6 +190,5 @@
         private CustomControls.LButton btnAccess_Reporte;
         private CustomControls.LButton btnAccess_Productos;
         private CustomControls.LButton btnAccess_Ventas;
-        private Dashboard MainBoard;
     }
 }

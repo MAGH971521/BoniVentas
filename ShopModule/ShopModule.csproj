@@ -36,6 +36,9 @@
     <Reference Include="Animator">
       <HintPath>..\..\Animator\Animator\bin\Debug\Animator.dll</HintPath>
     </Reference>
+    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -50,7 +53,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Controllers\BrandController.cs" />
+    <Compile Include="Classes\Controllers\BuyController.cs" />
+    <Compile Include="Classes\Controllers\CategoryController.cs" />
+    <Compile Include="Classes\Controllers\DBController.cs" />
+    <Compile Include="Classes\Controllers\ProductController.cs" />
+    <Compile Include="Classes\Controllers\ProviderController.cs" />
+    <Compile Include="Classes\Controllers\RecipeController.cs" />
+    <Compile Include="Classes\Controllers\SellController.cs" />
+    <Compile Include="Classes\Controllers\UnitController.cs" />
+    <Compile Include="Classes\Controllers\UserController.cs" />
+    <Compile Include="Classes\Misc\Miscs.cs" />
+    <Compile Include="Classes\Models\Brand.cs" />
+    <Compile Include="Classes\Models\Buy.cs" />
+    <Compile Include="Classes\Models\Category.cs" />
+    <Compile Include="Classes\Models\Product.cs" />
+    <Compile Include="Classes\Models\Provider.cs" />
+    <Compile Include="Classes\Models\Recipe.cs" />
+    <Compile Include="Classes\Models\Sell.cs" />
+    <Compile Include="Classes\Models\Unit.cs" />
+    <Compile Include="Classes\Models\User.cs" />
+    <Compile Include="Classes\Models\UserType.cs" />
     <Compile Include="CustomControls\BBLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CustomComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\CustomTextBox.cs">
@@ -62,17 +89,20 @@
     <Compile Include="CustomControls\DialogForm.Designer.cs">
       <DependentUpon>DialogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\FieldBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\FlatButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\LButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\TemplateForm.cs">
       <SubType>Form</SubType>
@@ -109,8 +139,8 @@
     <EmbeddedResource Include="CustomControls\DialogForm.resx">
       <DependentUpon>DialogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\TemplateForm.resx">
       <DependentUpon>TemplateForm.cs</DependentUpon>
@@ -137,6 +167,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,5 +184,6 @@
   <ItemGroup>
     <None Include="Resources\BoniVentasLogo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

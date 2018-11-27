@@ -58,6 +58,7 @@
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(179, 21);
             this.txtMail.TabIndex = 2;
+            this.txtMail.TextChanged += new System.EventHandler(this.btnSender_onChangeText);
             // 
             // btnSender
             // 
@@ -75,6 +76,7 @@
             // 
             // DataRecoveryForm
             // 
+            this.AcceptButton = this.btnSender;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 200);
