@@ -103,7 +103,7 @@ namespace ShopModule
                     if (user.Pswd == Classes.Misc.Miscs.EncryptPassword(txtPswd.Text))
                     {
 
-                        Forms.MenuForm mF = new Forms.MenuForm("BoniVentas", pbLogo.Image);
+                        Forms.MenuForm mF = new Forms.MenuForm("BoniVentas", pbLogo.Image, user);
                         mF.Show();
                         this.Hide();
                         txtUsername.Clear();
