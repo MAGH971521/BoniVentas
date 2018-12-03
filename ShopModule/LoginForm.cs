@@ -15,9 +15,9 @@ namespace ShopModule
         {
             InitializeComponent();
             Miscs.GenerateBasicDB();
-            EffectEvents();
+            // EffectEvents();
         }
-
+        /*
         private void EffectEvents()
         {
             this.lblTitle.Hide();
@@ -36,7 +36,7 @@ namespace ShopModule
             animateComponents.Show(btnAccess);
             animateComponents.Show(lnkDataRecovery);
         }
-
+        */
         private void btnClose_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
