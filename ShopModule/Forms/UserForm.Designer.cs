@@ -33,17 +33,15 @@
             this.btnResetSearch = new ShopModule.CustomControls.FlatButton();
             this.chckUserType2 = new System.Windows.Forms.CheckBox();
             this.chckUserType = new System.Windows.Forms.CheckBox();
-            this.txtLastPattern = new ShopModule.CustomControls.FieldBox();
             this.txtFirstPattern = new ShopModule.CustomControls.FieldBox();
             this.lblParam3 = new System.Windows.Forms.Label();
-            this.lblParam2 = new System.Windows.Forms.Label();
             this.lblParam1 = new System.Windows.Forms.Label();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.btnSearch = new ShopModule.CustomControls.FlatButton();
             this.btnMod = new ShopModule.CustomControls.FlatButton();
             this.btnEliminar = new ShopModule.CustomControls.FlatButton();
             this.btnAdd = new ShopModule.CustomControls.FlatButton();
             this.bbLabel1 = new ShopModule.CustomControls.BBLabel();
+            this.btnSearch = new ShopModule.CustomControls.FlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsers)).BeginInit();
             this.pnlSearchForm.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +51,7 @@
             this.dgUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgUsers.Location = new System.Drawing.Point(26, 264);
             this.dgUsers.Name = "dgUsers";
+            this.dgUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgUsers.Size = new System.Drawing.Size(500, 300);
             this.dgUsers.TabIndex = 1;
             // 
@@ -61,10 +60,8 @@
             this.pnlSearchForm.Controls.Add(this.btnResetSearch);
             this.pnlSearchForm.Controls.Add(this.chckUserType2);
             this.pnlSearchForm.Controls.Add(this.chckUserType);
-            this.pnlSearchForm.Controls.Add(this.txtLastPattern);
             this.pnlSearchForm.Controls.Add(this.txtFirstPattern);
             this.pnlSearchForm.Controls.Add(this.lblParam3);
-            this.pnlSearchForm.Controls.Add(this.lblParam2);
             this.pnlSearchForm.Controls.Add(this.lblParam1);
             this.pnlSearchForm.Controls.Add(this.lblSearch);
             this.pnlSearchForm.Controls.Add(this.btnSearch);
@@ -77,12 +74,12 @@
             // 
             // btnResetSearch
             // 
-            this.btnResetSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnResetSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
             this.btnResetSearch.FlatAppearance.BorderSize = 0;
-            this.btnResetSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnResetSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.btnResetSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetSearch.ForeColor = System.Drawing.Color.White;
-            this.btnResetSearch.Location = new System.Drawing.Point(452, 97);
+            this.btnResetSearch.Location = new System.Drawing.Point(558, 61);
             this.btnResetSearch.Name = "btnResetSearch";
             this.btnResetSearch.Size = new System.Drawing.Size(100, 30);
             this.btnResetSearch.TabIndex = 14;
@@ -93,7 +90,7 @@
             // chckUserType2
             // 
             this.chckUserType2.AutoSize = true;
-            this.chckUserType2.Location = new System.Drawing.Point(529, 61);
+            this.chckUserType2.Location = new System.Drawing.Point(273, 101);
             this.chckUserType2.Name = "chckUserType2";
             this.chckUserType2.Size = new System.Drawing.Size(129, 25);
             this.chckUserType2.TabIndex = 13;
@@ -103,20 +100,12 @@
             // chckUserType
             // 
             this.chckUserType.AutoSize = true;
-            this.chckUserType.Location = new System.Drawing.Point(425, 61);
+            this.chckUserType.Location = new System.Drawing.Point(169, 101);
             this.chckUserType.Name = "chckUserType";
             this.chckUserType.Size = new System.Drawing.Size(98, 25);
             this.chckUserType.TabIndex = 12;
             this.chckUserType.Text = "Empleado";
             this.chckUserType.UseVisualStyleBackColor = true;
-            // 
-            // txtLastPattern
-            // 
-            this.txtLastPattern.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLastPattern.Location = new System.Drawing.Point(139, 98);
-            this.txtLastPattern.Name = "txtLastPattern";
-            this.txtLastPattern.Size = new System.Drawing.Size(125, 20);
-            this.txtLastPattern.TabIndex = 11;
             // 
             // txtFirstPattern
             // 
@@ -129,20 +118,11 @@
             // lblParam3
             // 
             this.lblParam3.AutoSize = true;
-            this.lblParam3.Location = new System.Drawing.Point(290, 61);
+            this.lblParam3.Location = new System.Drawing.Point(34, 102);
             this.lblParam3.Name = "lblParam3";
             this.lblParam3.Size = new System.Drawing.Size(129, 21);
             this.lblParam3.TabIndex = 9;
             this.lblParam3.Text = "Tipos de Usuario:";
-            // 
-            // lblParam2
-            // 
-            this.lblParam2.AutoSize = true;
-            this.lblParam2.Location = new System.Drawing.Point(33, 97);
-            this.lblParam2.Name = "lblParam2";
-            this.lblParam2.Size = new System.Drawing.Size(99, 21);
-            this.lblParam2.TabIndex = 8;
-            this.lblParam2.Text = "Termina con:";
             // 
             // lblParam1
             // 
@@ -161,20 +141,6 @@
             this.lblSearch.Size = new System.Drawing.Size(167, 21);
             this.lblSearch.TabIndex = 6;
             this.lblSearch.Text = "Patrones de busqueda:";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(558, 97);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 30);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // btnMod
             // 
@@ -233,6 +199,23 @@
             this.bbLabel1.Text = "Usuarios";
             this.bbLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(558, 97);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 30);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -268,10 +251,8 @@
         private CustomControls.FlatButton btnResetSearch;
         private System.Windows.Forms.CheckBox chckUserType2;
         private System.Windows.Forms.CheckBox chckUserType;
-        private CustomControls.FieldBox txtLastPattern;
         private CustomControls.FieldBox txtFirstPattern;
         private System.Windows.Forms.Label lblParam3;
-        private System.Windows.Forms.Label lblParam2;
         private System.Windows.Forms.Label lblParam1;
     }
 }

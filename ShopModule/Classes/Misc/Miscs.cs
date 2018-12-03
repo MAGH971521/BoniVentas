@@ -77,6 +77,7 @@ namespace ShopModule.Classes.Misc
                 user.Pswd = Classes.Misc.Miscs.EncryptPassword("temp123");
                 user.EmailAddress = "magh1521@gmail.com";
                 user.Name = "John";
+                user.Birthday = DateTime.Now;
                 user.LastName = "Smith";
                 user.Type = UserType.Admon;
 

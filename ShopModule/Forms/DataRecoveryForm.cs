@@ -73,5 +73,11 @@ namespace ShopModule.Forms
                 this.txtMail.Controls[0].BackColor = Color.FromArgb(192, 57, 43);
             }
         }
+
+        public override void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            txtMail.Text = "";
+        }
     }
 }

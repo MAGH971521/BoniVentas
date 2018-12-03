@@ -19,7 +19,6 @@ namespace ShopModule.Forms.UsersActions
 {
     public partial class UserModifyForm : TemplateForm
     {
-        OpenFileDialog open = new OpenFileDialog();
         private const string Pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
         private User oldUser;
 
@@ -30,9 +29,9 @@ namespace ShopModule.Forms.UsersActions
             oldUser = user;
             cbUserType.DataSource = Enum.GetNames(typeof(UserType));
 
-            pbImageUser.Image = Image.FromFile(oldUser.ImagePath);
             txtConfirm.Text = Miscs.DecryptPassword(oldUser.Pswd);
             txtPswd.Text = Miscs.DecryptPassword(oldUser.Pswd);
+            txtUser.Text = oldUser.Username;
             txtFirstName.Text = oldUser.Name;
             txtLastName.Text = oldUser.LastName;
             dpBirth.Value = oldUser.Birthday;
@@ -83,14 +82,6 @@ namespace ShopModule.Forms.UsersActions
                         Type = type
                     };
 
-                    if (pbImageUser.Image != null)
-                    {
-                        Bitmap b = new Bitmap(open.FileName);
-                        string path = "./Users/" + Id.ToString() + "/profile.jpg";
-                        b.Save(path);
-                        user.ImagePath = path;
-                    }
-
                     controller.Update(user);
                     this.Hide();
                     ClearFields();
@@ -110,14 +101,6 @@ namespace ShopModule.Forms.UsersActions
         {
             ClearFields();
             this.Hide();
-        }
-
-        private void pbImageUser_Click(object sender, EventArgs e)
-        {
-            RoundImage pb = sender as RoundImage;
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpp; *.jpeg; *.png;)| *.jpg; *jpeg; *.png";
-            if (open.ShowDialog() == DialogResult.OK) pb.Image = new Bitmap(open.FileName);
         }
     }
 }

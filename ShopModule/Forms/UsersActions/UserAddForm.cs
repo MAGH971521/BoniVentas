@@ -45,14 +45,7 @@ namespace ShopModule.Forms.UsersActions
             txtMail.Text = "";
             cbUserType.SelectedIndex = 0;
         }
-
-        private void pbImageUser_Click(object sender, EventArgs e)
-        {
-            RoundImage pb = sender as RoundImage;
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpp; *.jpeg; *.png;)| *.jpg; *jpeg; *.png";
-            if (open.ShowDialog() == DialogResult.OK) pb.Image = new Bitmap(open.FileName);
-        }
+        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -87,14 +80,6 @@ namespace ShopModule.Forms.UsersActions
                         Type = type
                     };
 
-                    if(pbImageUser.Image != null)
-                    {
-                        Bitmap b = new Bitmap(open.FileName);
-                        string path = "./Users/" + newId.ToString() + "/profile.jpg";
-                        b.Save(path);
-                        user.ImagePath = path;
-                    }
-
                     controller.Add(user);
                     this.Hide();
                     ClearFields();
@@ -108,6 +93,12 @@ namespace ShopModule.Forms.UsersActions
             {
                 MessageBox.Show("Ingrese todos los datos!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        public override void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClearFields();
         }
     }
 }

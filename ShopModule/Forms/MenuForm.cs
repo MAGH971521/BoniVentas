@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +15,14 @@ namespace ShopModule.Forms
 {
     public partial class MenuForm : TemplateForm
     {
+
+        private User user;
         public MenuForm(string WindowName, Image Logo, User user)
         {
             this.WindowName.Text = WindowName;
             pbLogo.Image = Logo;
             InitializeComponent();
-
-            //if (user.ImagePath != null) pbUserImage.Image = user.Image;
-            //else pbUserImage.Image = null;
+            this.user = user;
 
             btnAccess_Compras.Controls[0].BackColor = Color.FromArgb(243, 156, 18);
             btnAccess_Ventas.Controls[0].BackColor = Color.FromArgb(22, 160, 133);
@@ -36,6 +37,7 @@ namespace ShopModule.Forms
             if (!(user.Type == UserType.Admon))
             {
                 btnAccess_Usuarios.Visible = false;
+                btnAccess_Productos.Visible = false;
             }
         }
 
@@ -65,8 +67,17 @@ namespace ShopModule.Forms
         {
             LButton btn = sender as LButton;
             btn.BackColor = btn.FlatAppearance.MouseOverBackColor;
-            if (this.pnlMain.Controls.Count > 0) this.pnlMain.Controls.Clear(); 
+            this.pnlMain.Controls.Clear(); 
             this.pnlMain.Controls.Add(new UserForm()
+            {
+                Dock = DockStyle.Fill
+            });
+        }
+
+        private void btnAccess_Profile_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(new ProfileForm(user)
             {
                 Dock = DockStyle.Fill
             });
