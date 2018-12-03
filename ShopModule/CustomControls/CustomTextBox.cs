@@ -12,7 +12,7 @@ namespace ShopModule.CustomControls
             Controls.Add(
                 new Label()
                 {
-                    Height = 1, Dock = DockStyle.Bottom, BackColor = Color.FromArgb(41, 128, 185)
+                    Height = 2, Dock = DockStyle.Bottom, BackColor = Color.FromArgb(41, 128, 185)
                 });
         }
     }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ShopModule
 {
-    public partial class MenuForm : Form
+    public partial class TemplateForm : Form
     {
-        public MenuForm()
+        public TemplateForm()
         {
             InitializeComponent();
         }
@@ -46,14 +46,9 @@ namespace ShopModule
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        public virtual void btnClose_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("","Advertencia", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
-            {
-                LoginForm lF = new LoginForm();
-                lF.Show();
-                this.Close();
-            }
+            Environment.Exit(0);
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
