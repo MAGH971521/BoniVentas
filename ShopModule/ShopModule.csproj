@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Animator">
-      <HintPath>..\..\Animator\Animator\bin\Debug\Animator.dll</HintPath>
+      <HintPath>..\..\..\..\..\Animator\Animator\bin\Debug\Animator.dll</HintPath>
     </Reference>
     <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
       <HintPath>..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
@@ -101,6 +101,9 @@
     <Compile Include="CustomControls\LButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\RoundImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\ProfileForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +121,12 @@
     </Compile>
     <Compile Include="Forms\UsersActions\UserAddForm.Designer.cs">
       <DependentUpon>UserAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UsersActions\UserModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UsersActions\UserModifyForm.Designer.cs">
+      <DependentUpon>UserModifyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -156,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UsersActions\UserAddForm.resx">
       <DependentUpon>UserAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UsersActions\UserModifyForm.resx">
+      <DependentUpon>UserModifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -196,6 +208,8 @@
   <ItemGroup>
     <None Include="Resources\BoniVentasLogo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\VS2017 Image Library\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

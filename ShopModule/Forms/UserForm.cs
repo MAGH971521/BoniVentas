@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShopModule.Forms.UsersActions;
+using ShopModule.Classes.Models;
+using LiteDB;
+using ShopModule.Classes.Controllers;
 
 namespace ShopModule.Forms
 {
@@ -14,7 +18,9 @@ namespace ShopModule.Forms
     {
         public UserForm()
         {
+            UserController controller = new UserController();
             InitializeComponent();
+            dgUsers.DataSource = controller.Select(Query.All());
         }
 
         private void btnResetSearch_Click(object sender, EventArgs e)
@@ -23,6 +29,27 @@ namespace ShopModule.Forms
             txtLastPattern.Text = "";
             chckUserType.CheckState = CheckState.Unchecked;
             chckUserType2.CheckState = CheckState.Unchecked;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            UserAddForm UAF = new UserAddForm();
+            UAF.Show();
+        }
+
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            User user = new User()
+            {
+
+            };
+            UserModifyForm UMF = new UserModifyForm(user);
+            UMF.Show();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

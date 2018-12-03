@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
 using LiteDB;
 using ShopModule.Classes.Controllers;
+using ShopModule.Classes.Misc;
 using ShopModule.Classes.Models;
 
 namespace ShopModule
@@ -14,24 +14,7 @@ namespace ShopModule
         public LoginForm()
         {
             InitializeComponent();
-
-            User user = new User();
-            user.Username = "admon01";
-            user.Pswd = Classes.Misc.Miscs.EncryptPassword("temp123");
-            user.EmailAddress = "magh1521@gmail.com";
-            user.Name = "John";
-            user.LastName = "Smith";
-            user.Type = UserType.Admon;
-
-            try
-            {
-                UserController controller = new UserController();
-                controller.Add(user);
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.ToString());
-            }
-
+            Miscs.GenerateBasicDB();
             EffectEvents();
         }
 

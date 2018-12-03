@@ -1,10 +1,13 @@
-﻿using System;
+﻿using ShopModule.Classes.Controllers;
+using ShopModule.Classes.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ShopModule.Classes.Misc
 {
@@ -63,6 +66,30 @@ namespace ShopModule.Classes.Misc
             }
 
             return pswdEncrypt;
+        }
+
+        public static void GenerateBasicDB()
+        {
+            if (!File.Exists("./my.db"))
+            {
+                User user = new User();
+                user.Username = "admon01";
+                user.Pswd = Classes.Misc.Miscs.EncryptPassword("temp123");
+                user.EmailAddress = "magh1521@gmail.com";
+                user.Name = "John";
+                user.LastName = "Smith";
+                user.Type = UserType.Admon;
+
+                try
+                {
+                    UserController controller = new UserController();
+                    controller.Add(user);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
     }
 }

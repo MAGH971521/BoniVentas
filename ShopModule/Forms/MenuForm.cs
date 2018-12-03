@@ -20,8 +20,8 @@ namespace ShopModule.Forms
             pbLogo.Image = Logo;
             InitializeComponent();
 
-            if (user.Image != null) pbUserImage.Image = user.Image;
-            else pbUserImage.Image = null;
+            //if (user.ImagePath != null) pbUserImage.Image = user.Image;
+            //else pbUserImage.Image = null;
 
             btnAccess_Compras.Controls[0].BackColor = Color.FromArgb(243, 156, 18);
             btnAccess_Ventas.Controls[0].BackColor = Color.FromArgb(22, 160, 133);

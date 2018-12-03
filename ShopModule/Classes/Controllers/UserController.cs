@@ -30,6 +30,16 @@ namespace ShopModule.Classes.Controllers
             }
         }
 
+        public int Count(Query query = null)
+        {
+            using (LiteDatabase db = new LiteDatabase("my.db"))
+            {
+                var col = db.GetCollection<User>("users");
+                col.EnsureIndex(x => x.Id, true);
+                return col.Find(query).Count();
+            }
+        }
+
         public void Delete(User user)
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
@@ -40,7 +50,7 @@ namespace ShopModule.Classes.Controllers
             }
         }
 
-        public List<User> Select(Query query)
+        public List<User> Select(Query query = null)
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {

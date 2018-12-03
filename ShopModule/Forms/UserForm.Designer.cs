@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgUsers = new System.Windows.Forms.DataGridView();
             this.pnlSearchForm = new ShopModule.CustomControls.BorderPanel();
             this.btnResetSearch = new ShopModule.CustomControls.FlatButton();
             this.chckUserType2 = new System.Windows.Forms.CheckBox();
@@ -44,17 +44,17 @@
             this.btnEliminar = new ShopModule.CustomControls.FlatButton();
             this.btnAdd = new ShopModule.CustomControls.FlatButton();
             this.bbLabel1 = new ShopModule.CustomControls.BBLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsers)).BeginInit();
             this.pnlSearchForm.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgUsers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 264);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(500, 300);
-            this.dataGridView1.TabIndex = 1;
+            this.dgUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsers.Location = new System.Drawing.Point(26, 264);
+            this.dgUsers.Name = "dgUsers";
+            this.dgUsers.Size = new System.Drawing.Size(500, 300);
+            this.dgUsers.TabIndex = 1;
             // 
             // pnlSearchForm
             // 
@@ -140,7 +140,7 @@
             this.lblParam2.AutoSize = true;
             this.lblParam2.Location = new System.Drawing.Point(33, 97);
             this.lblParam2.Name = "lblParam2";
-            this.lblParam2.Size = new System.Drawing.Size(97, 21);
+            this.lblParam2.Size = new System.Drawing.Size(99, 21);
             this.lblParam2.TabIndex = 8;
             this.lblParam2.Text = "Termina con:";
             // 
@@ -158,7 +158,7 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Location = new System.Drawing.Point(34, 24);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(166, 21);
+            this.lblSearch.Size = new System.Drawing.Size(167, 21);
             this.lblSearch.TabIndex = 6;
             this.lblSearch.Text = "Patrones de busqueda:";
             // 
@@ -189,6 +189,7 @@
             this.btnMod.TabIndex = 4;
             this.btnMod.Text = "Modificar";
             this.btnMod.UseVisualStyleBackColor = false;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             // 
             // btnEliminar
             // 
@@ -203,6 +204,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAdd
             // 
@@ -217,6 +219,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // bbLabel1
             // 
@@ -239,13 +242,13 @@
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgUsers);
             this.Controls.Add(this.bbLabel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserForm";
             this.Size = new System.Drawing.Size(700, 590);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsers)).EndInit();
             this.pnlSearchForm.ResumeLayout(false);
             this.pnlSearchForm.PerformLayout();
             this.ResumeLayout(false);
@@ -255,7 +258,7 @@
         #endregion
 
         private CustomControls.BBLabel bbLabel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgUsers;
         private CustomControls.FlatButton btnAdd;
         private CustomControls.FlatButton btnEliminar;
         private CustomControls.FlatButton btnMod;

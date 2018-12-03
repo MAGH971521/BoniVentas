@@ -1,6 +1,6 @@
 ﻿namespace ShopModule.Forms.UsersActions
 {
-    partial class UserAddForm
+    partial class UserModifyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -91,14 +91,13 @@
             this.pnlMain.Location = new System.Drawing.Point(34, 65);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(632, 270);
-            this.pnlMain.TabIndex = 3;
+            this.pnlMain.TabIndex = 4;
             // 
             // txtMail
             // 
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMail.Location = new System.Drawing.Point(303, 77);
             this.txtMail.Name = "txtMail";
-            this.txtMail.PasswordChar = '*';
             this.txtMail.Size = new System.Drawing.Size(301, 20);
             this.txtMail.TabIndex = 25;
             // 
@@ -273,14 +272,14 @@
             this.lblName.TabIndex = 5;
             this.lblName.Text = "Nombre(s):";
             // 
-            // UserAddForm
+            // UserModifyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 400);
             this.Controls.Add(this.pnlMain);
-            this.Name = "UserAddForm";
-            this.Text = "UserAddForm";
+            this.Name = "UserModifyForm";
+            this.Text = "UserModifyForm";
             this.Controls.SetChildIndex(this.pnlMain, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlMain.ResumeLayout(false);
