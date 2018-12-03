@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.RPanel = new System.Windows.Forms.Panel();
             this.lnkDataRecovery = new System.Windows.Forms.LinkLabel();
             this.WindowPanel = new System.Windows.Forms.Panel();
@@ -44,7 +41,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.LPanel = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.animateComponents = new AnimatorNS.Animator(this.components);
             this.RPanel.SuspendLayout();
             this.WindowPanel.SuspendLayout();
             this.LPanel.SuspendLayout();
@@ -62,7 +58,6 @@
             this.RPanel.Controls.Add(this.lblUsername);
             this.RPanel.Controls.Add(this.btnAccess);
             this.RPanel.Controls.Add(this.lblTitle);
-            this.animateComponents.SetDecoration(this.RPanel, AnimatorNS.DecorationType.None);
             this.RPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.RPanel.Location = new System.Drawing.Point(350, 0);
             this.RPanel.Name = "RPanel";
@@ -74,7 +69,6 @@
             // 
             this.lnkDataRecovery.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lnkDataRecovery.BackColor = System.Drawing.Color.Transparent;
-            this.animateComponents.SetDecoration(this.lnkDataRecovery, AnimatorNS.DecorationType.None);
             this.lnkDataRecovery.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lnkDataRecovery.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lnkDataRecovery.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
@@ -92,7 +86,6 @@
             // 
             this.WindowPanel.Controls.Add(this.btnMinimize);
             this.WindowPanel.Controls.Add(this.btnClose);
-            this.animateComponents.SetDecoration(this.WindowPanel, AnimatorNS.DecorationType.None);
             this.WindowPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.WindowPanel.Location = new System.Drawing.Point(0, 0);
             this.WindowPanel.Name = "WindowPanel";
@@ -103,7 +96,6 @@
             // btnMinimize
             // 
             this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.animateComponents.SetDecoration(this.btnMinimize, AnimatorNS.DecorationType.None);
             this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -119,7 +111,6 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.animateComponents.SetDecoration(this.btnClose, AnimatorNS.DecorationType.None);
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -136,7 +127,6 @@
             // 
             this.txtPswd.BackColor = System.Drawing.Color.White;
             this.txtPswd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.animateComponents.SetDecoration(this.txtPswd, AnimatorNS.DecorationType.None);
             this.txtPswd.Location = new System.Drawing.Point(50, 256);
             this.txtPswd.Name = "txtPswd";
             this.txtPswd.PasswordChar = '*';
@@ -148,7 +138,6 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.animateComponents.SetDecoration(this.txtUsername, AnimatorNS.DecorationType.None);
             this.txtUsername.Location = new System.Drawing.Point(50, 180);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(250, 25);
@@ -158,7 +147,6 @@
             // lblPswd
             // 
             this.lblPswd.AutoSize = true;
-            this.animateComponents.SetDecoration(this.lblPswd, AnimatorNS.DecorationType.None);
             this.lblPswd.Location = new System.Drawing.Point(50, 224);
             this.lblPswd.Name = "lblPswd";
             this.lblPswd.Size = new System.Drawing.Size(89, 21);
@@ -168,7 +156,6 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.animateComponents.SetDecoration(this.lblUsername, AnimatorNS.DecorationType.None);
             this.lblUsername.Location = new System.Drawing.Point(50, 150);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(64, 21);
@@ -178,7 +165,6 @@
             // btnAccess
             // 
             this.btnAccess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.animateComponents.SetDecoration(this.btnAccess, AnimatorNS.DecorationType.None);
             this.btnAccess.FlatAppearance.BorderSize = 0;
             this.btnAccess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnAccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -193,7 +179,6 @@
             // 
             // lblTitle
             // 
-            this.animateComponents.SetDecoration(this.lblTitle, AnimatorNS.DecorationType.None);
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.lblTitle.Location = new System.Drawing.Point(100, 50);
             this.lblTitle.Name = "lblTitle";
@@ -206,7 +191,6 @@
             // 
             this.LPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.LPanel.Controls.Add(this.pbLogo);
-            this.animateComponents.SetDecoration(this.LPanel, AnimatorNS.DecorationType.None);
             this.LPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LPanel.Location = new System.Drawing.Point(0, 0);
             this.LPanel.Name = "LPanel";
@@ -216,7 +200,6 @@
             // 
             // pbLogo
             // 
-            this.animateComponents.SetDecoration(this.pbLogo, AnimatorNS.DecorationType.None);
             this.pbLogo.Image = global::ShopModule.Properties.Resources.BoniVentasLogo;
             this.pbLogo.Location = new System.Drawing.Point(25, 75);
             this.pbLogo.Name = "pbLogo";
@@ -224,27 +207,6 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
-            // 
-            // animateComponents
-            // 
-            this.animateComponents.AnimationType = AnimatorNS.AnimationType.Transparent;
-            this.animateComponents.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.animateComponents.DefaultAnimation = animation1;
             // 
             // LoginForm
             // 
@@ -255,7 +217,6 @@
             this.ClientSize = new System.Drawing.Size(700, 450);
             this.Controls.Add(this.LPanel);
             this.Controls.Add(this.RPanel);
-            this.animateComponents.SetDecoration(this, AnimatorNS.DecorationType.None);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -289,7 +250,6 @@
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.LinkLabel lnkDataRecovery;
-        private AnimatorNS.Animator animateComponents;
     }
 }
 

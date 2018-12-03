@@ -21,6 +21,13 @@ namespace ShopModule.Forms
             UserController controller = new UserController();
             InitializeComponent();
             dgUsers.DataSource = controller.Select(Query.All());
+            HideColumns();
+        }
+
+        private void HideColumns()
+        {
+            dgUsers.Columns["Pswd"].Visible = false;
+            dgUsers.Columns["ImagePath"].Visible = false;
         }
 
         private void btnResetSearch_Click(object sender, EventArgs e)
