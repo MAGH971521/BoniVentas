@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LiteDB;
+using ShopModule.Classes.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +33,7 @@ namespace ShopModule.Forms
 
         private void btnSender_Click(object sender, EventArgs e)
         {
+            UserController controller = new UserController();
             if(ValidateEmail(txtMail.Text))
             {
                 try
@@ -42,7 +45,7 @@ namespace ShopModule.Forms
                     mail.From = new MailAddress("magh1521@gmail.com");
                     mail.To.Add(txtMail.Text);
                     mail.Subject = "Recovery Password";
-                    mail.Body = "Your password is: ";
+                    mail.Body = "Your password is: " + controller.Select(Query.EQ("EmailAddress",txtMail.Text))[0].ToString();
 
                     smtpServer.Port = 587;
                     smtpServer.Credentials = new System.Net.NetworkCredential("magh1521@gmail.com", "15211476");
@@ -50,7 +53,7 @@ namespace ShopModule.Forms
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
                 this.Close();
             }
