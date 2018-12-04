@@ -244,7 +244,6 @@
             this.pbImageUser.Size = new System.Drawing.Size(100, 100);
             this.pbImageUser.TabIndex = 8;
             this.pbImageUser.TabStop = false;
-            this.pbImageUser.Click += new System.EventHandler(this.pbImageUser_Click);
             // 
             // lblProfileBirthDate
             // 

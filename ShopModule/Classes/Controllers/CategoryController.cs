@@ -14,7 +14,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Category>("brands");
+                var col = db.GetCollection<Category>("category");
                 col.Insert(category);
             }
         }
@@ -23,8 +23,18 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Category>("brands");
+                var col = db.GetCollection<Category>("category");
                 col.Insert(categories);
+            }
+        }
+
+        public int Count(Query query = null)
+        {
+            using (LiteDatabase db = new LiteDatabase("my.db"))
+            {
+                var col = db.GetCollection<Brand>("category");
+                col.EnsureIndex(x => x.Id, true);
+                return col.Find(query).Count();
             }
         }
 
@@ -32,7 +42,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Category>("brands");
+                var col = db.GetCollection<Category>("category");
                 col.Delete(category.Id);
             }
         }
@@ -41,7 +51,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Category>("brands");
+                var col = db.GetCollection<Category>("category");
                 return col.Find(query).ToList();
             }
         }
@@ -50,7 +60,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Category>("brands");
+                var col = db.GetCollection<Category>("category");
                 col.Update(category);
             }
         }

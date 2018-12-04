@@ -30,6 +30,7 @@
         {
             this.slideMenu = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnAccess_Profile = new ShopModule.CustomControls.LButton();
             this.btnAccess_Usuarios = new ShopModule.CustomControls.LButton();
             this.btnAccess_Productos = new ShopModule.CustomControls.LButton();
             this.btnAccess_Ventas = new ShopModule.CustomControls.LButton();
@@ -72,6 +73,7 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnAccess_Profile);
             this.pnlMenu.Controls.Add(this.btnAccess_Usuarios);
             this.pnlMenu.Controls.Add(this.btnAccess_Productos);
             this.pnlMenu.Controls.Add(this.btnAccess_Ventas);
@@ -82,6 +84,23 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(250, 401);
             this.pnlMenu.TabIndex = 1;
+            // 
+            // btnAccess_Profile
+            // 
+            this.btnAccess_Profile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAccess_Profile.FlatAppearance.BorderSize = 0;
+            this.btnAccess_Profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccess_Profile.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btnAccess_Profile.ForeColor = System.Drawing.Color.White;
+            this.btnAccess_Profile.Location = new System.Drawing.Point(0, 225);
+            this.btnAccess_Profile.Name = "btnAccess_Profile";
+            this.btnAccess_Profile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAccess_Profile.Size = new System.Drawing.Size(250, 45);
+            this.btnAccess_Profile.TabIndex = 5;
+            this.btnAccess_Profile.Text = "Perfil de Usuario";
+            this.btnAccess_Profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccess_Profile.UseVisualStyleBackColor = true;
+            this.btnAccess_Profile.Click += new System.EventHandler(this.btnAccess_Profile_Click);
             // 
             // btnAccess_Usuarios
             // 
@@ -175,10 +194,12 @@
             // 
             // pbUserImage
             // 
-            this.pbUserImage.BackColor = System.Drawing.Color.White;
+            this.pbUserImage.BackColor = System.Drawing.Color.Transparent;
+            this.pbUserImage.Image = global::ShopModule.Properties.Resources.BoniVentasLogo;
             this.pbUserImage.Location = new System.Drawing.Point(45, 15);
             this.pbUserImage.Name = "pbUserImage";
             this.pbUserImage.Size = new System.Drawing.Size(160, 160);
+            this.pbUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUserImage.TabIndex = 0;
             this.pbUserImage.TabStop = false;
             // 
@@ -222,5 +243,6 @@
         private CustomControls.LButton btnAccess_Ventas;
         private CustomControls.LButton btnAccess_Usuarios;
         private System.Windows.Forms.Panel pnlMain;
+        private CustomControls.LButton btnAccess_Profile;
     }
 }

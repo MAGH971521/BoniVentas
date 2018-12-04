@@ -61,7 +61,6 @@
     <Compile Include="Classes\Controllers\ProviderController.cs" />
     <Compile Include="Classes\Controllers\RecipeController.cs" />
     <Compile Include="Classes\Controllers\SellController.cs" />
-    <Compile Include="Classes\Controllers\UnitController.cs" />
     <Compile Include="Classes\Controllers\UserController.cs" />
     <Compile Include="Classes\Misc\Miscs.cs" />
     <Compile Include="Classes\Models\Brand.cs" />
@@ -101,8 +100,47 @@
     <Compile Include="CustomControls\LButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\RoundImage.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\DashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\Brand\BrandAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\Brand\BrandAddForm.Designer.cs">
+      <DependentUpon>BrandAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\Category\CategoryAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\Category\CategoryAddForm.Designer.cs">
+      <DependentUpon>CategoryAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\ProductFormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\ProductFormAdd.Designer.cs">
+      <DependentUpon>ProductFormAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\Provider\ProviderAddFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\Provider\ProviderAddFrom.Designer.cs">
+      <DependentUpon>ProviderAddFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.Designer.cs">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProfileForm.cs">
       <SubType>UserControl</SubType>
@@ -157,6 +195,24 @@
     <EmbeddedResource Include="CustomControls\DialogForm.resx">
       <DependentUpon>DialogForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsActions\Brand\BrandAddForm.resx">
+      <DependentUpon>BrandAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsActions\Category\CategoryAddForm.resx">
+      <DependentUpon>CategoryAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsActions\ProductFormAdd.resx">
+      <DependentUpon>ProductFormAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsActions\Provider\ProviderAddFrom.resx">
+      <DependentUpon>ProviderAddFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsForm.resx">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +248,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ShopModule.Classes.Controllers.BrandController.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -210,6 +267,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\VS2017 Image Library\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

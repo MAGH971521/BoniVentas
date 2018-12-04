@@ -1,9 +1,4 @@
 ﻿using LiteDB;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopModule.Classes.Models
 {
@@ -12,16 +7,16 @@ namespace ShopModule.Classes.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        [BsonRef("brand")]
+        [BsonRef("Brand")]
         public Brand Brand { get; set; }
 
-        [BsonRef("category")]
+        [BsonRef("Category")]
         public Category Category { get; set; }
 
-        [BsonRef("provider")]
-        public Provider Provider { get; set; }
+        [BsonRef("Provider")]
+        public Provider1 Provider { get; set; }
 
-        [BsonRef("unit")]
+        [BsonRef("Unit")]
         public Unit Unit { get; set; }
 
 

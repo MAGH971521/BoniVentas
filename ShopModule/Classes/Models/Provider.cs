@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopModule.Classes.Models
 {
-    public class Provider
+    public class Provider1
     {
         public int Id { get; set; }
         public string Description { get; set; }

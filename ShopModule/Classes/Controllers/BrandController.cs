@@ -28,6 +28,16 @@ namespace ShopModule.Classes.Controllers
             }
         }
 
+        public int Count(Query query = null)
+        {
+            using(LiteDatabase db = new LiteDatabase("my.db"))
+            {
+                var col = db.GetCollection<Brand>("brands");
+                col.EnsureIndex(x => x.Id, true);
+                return col.Find(query).Count();
+            }
+        }
+
         public void Delete(Brand brand)
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))

@@ -18,7 +18,6 @@ namespace ShopModule.Classes.Models
         public string LastName { get; set; }
 
         public DateTime Birthday { get; set; }
-        public string ImagePath { get; set; }
         public UserType Type { get; set; }
     }
 }

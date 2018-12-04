@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace ShopModule.Classes.Models
 {
-    public class Unit
+    public enum Unit
     {
-        public int Id { get; set; }
-        public string Description { get; set; }
+        KG = 0,
+        G,
+        mG,
+        LB,
+        mL,
+        L,
+        Gal,
+        PZ,
+        OZ
     }
 }
