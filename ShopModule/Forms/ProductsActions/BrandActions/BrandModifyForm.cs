@@ -28,6 +28,7 @@ namespace ShopModule.Forms.ProductsActions.BrandActions
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtField.Text = "";
+            this.DialogResult = DialogResult.Cancel;
             this.Hide();
         }
 
@@ -43,7 +44,10 @@ namespace ShopModule.Forms.ProductsActions.BrandActions
                     Description = txtField.Text
                 };
 
-                controller.Add(brand);
+                controller.Update(brand);
+                txtField.Text = "";
+                this.DialogResult = DialogResult.OK;
+                this.Hide();
             }
             else
             {

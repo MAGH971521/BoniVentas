@@ -48,6 +48,7 @@ namespace ShopModule.Forms.UsersActions
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             ClearFields();
             this.Hide();
         }
@@ -80,6 +81,7 @@ namespace ShopModule.Forms.UsersActions
 
                     controller.Add(user);
                     this.Hide();
+                    this.DialogResult = DialogResult.OK;
                     ClearFields();
                 }
                 catch (Exception ex)

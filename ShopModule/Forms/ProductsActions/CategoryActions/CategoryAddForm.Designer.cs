@@ -37,22 +37,22 @@
             // 
             // WindowName
             // 
-            this.WindowName.Size = new System.Drawing.Size(300, 35);
+            this.WindowName.Size = new System.Drawing.Size(350, 35);
             // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Location = new System.Drawing.Point(230, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(280, 0);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(265, 0);
+            this.btnClose.Location = new System.Drawing.Point(315, 0);
             // 
             // txtField
             // 
             this.txtField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtField.Location = new System.Drawing.Point(112, 92);
+            this.txtField.Location = new System.Drawing.Point(142, 89);
             this.txtField.Name = "txtField";
             this.txtField.Size = new System.Drawing.Size(167, 20);
             this.txtField.TabIndex = 10;
@@ -60,11 +60,12 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(165, 147);
+            this.btnCancel.Location = new System.Drawing.Point(195, 144);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 30);
             this.btnCancel.TabIndex = 9;
@@ -79,7 +80,7 @@
             this.btnAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccept.ForeColor = System.Drawing.Color.White;
-            this.btnAccept.Location = new System.Drawing.Point(29, 147);
+            this.btnAccept.Location = new System.Drawing.Point(59, 144);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(100, 30);
             this.btnAccept.TabIndex = 8;
@@ -90,7 +91,7 @@
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(12, 91);
+            this.lblDesc.Location = new System.Drawing.Point(42, 88);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(94, 21);
             this.lblDesc.TabIndex = 7;
@@ -98,9 +99,11 @@
             // 
             // CategoryAddForm
             // 
+            this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 200);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(350, 200);
             this.Controls.Add(this.txtField);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);

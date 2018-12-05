@@ -34,15 +34,23 @@ namespace ShopModule.Forms
 
         private void btnResetSearch_Click(object sender, EventArgs e)
         {
+            UserController controller = new UserController();
             txtFirstPattern.Text = "";
             chckUserType.CheckState = CheckState.Unchecked;
             chckUserType2.CheckState = CheckState.Unchecked;
+            dgUsers.DataSource = controller.Select(Query.All());
+            dgUsers.ReadOnly = true;
+            HideColumns();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             UserAddForm UAF = new UserAddForm();
-            UAF.Show();
+            if (UAF.ShowDialog() == DialogResult.OK)
+            {
+                UserController controller = new UserController();
+                dgUsers.DataSource = controller.Select(Query.All());
+            }
         }
 
         private void btnMod_Click(object sender, EventArgs e)
@@ -64,7 +72,11 @@ namespace ShopModule.Forms
                 user.Birthday = Convert.ToDateTime(helper[6].Value.ToString());
                 user.Type = type;
                 UserModifyForm UMF = new UserModifyForm(user);
-                UMF.Show();
+                if(UMF.ShowDialog() == DialogResult.OK)
+                {
+                    UserController controller = new UserController();
+                    dgUsers.DataSource = controller.Select(Query.All());
+                }
             }
         }
 
@@ -85,13 +97,13 @@ namespace ShopModule.Forms
 
                 if(MessageBox.Show("¿Esta seguro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    controller.Delete(user);
-                    dgUsers.Refresh();
+                    dgUsers.DataSource = controller.Select(Query.All());
                 }
                 else
                 {
                     user = null;
                 }
+                dgUsers.DataSource = controller.Select(Query.All());
             }
         }
 

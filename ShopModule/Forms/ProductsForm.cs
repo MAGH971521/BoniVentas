@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShopModule.Classes.Controllers;
 using LiteDB;
+using ShopModule.Forms.ProductsActions;
 
 namespace ShopModule.Forms
 {
@@ -26,7 +27,6 @@ namespace ShopModule.Forms
 
             cbBrand.Items.Add("All");
             cbCategory.Items.Add("All");
-            cbProvider.Items.Add("All");
 
             foreach (var item in brandController.Select(Query.All()))
             {
@@ -36,7 +36,6 @@ namespace ShopModule.Forms
             {
                 cbCategory.Items.Add(item.Description);
             }
-
         }
 
         private void HideColumns()
@@ -47,15 +46,25 @@ namespace ShopModule.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            txtFirstPattern.Text = "";
-            cbCategory.SelectedItem = 0;
-            cbBrand.SelectedItem = 0;
-            cbProvider.SelectedItem = 0;
+            ProductController controller = new ProductController();
+            CategoryController catController = new CategoryController();
+            BrandController brandController = new BrandController();
+            
         }
 
         private void btnResetSearch_Click(object sender, EventArgs e)
         {
+            txtFirstPattern.Text = "";
+            cbCategory.SelectedItem = 0;
+            cbBrand.SelectedItem = 0;
+            ProductController controller = new ProductController();
+            dgProducts.DataSource = controller.Select(Query.All());
+        }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ProductFormAdd add = new ProductFormAdd();
+            add.Show();
         }
     }
 }
