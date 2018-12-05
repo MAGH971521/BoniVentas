@@ -58,7 +58,6 @@
     <Compile Include="Classes\Controllers\CategoryController.cs" />
     <Compile Include="Classes\Controllers\DBController.cs" />
     <Compile Include="Classes\Controllers\ProductController.cs" />
-    <Compile Include="Classes\Controllers\ProviderController.cs" />
     <Compile Include="Classes\Controllers\RecipeController.cs" />
     <Compile Include="Classes\Controllers\SellController.cs" />
     <Compile Include="Classes\Controllers\UserController.cs" />
@@ -67,7 +66,6 @@
     <Compile Include="Classes\Models\Buy.cs" />
     <Compile Include="Classes\Models\Category.cs" />
     <Compile Include="Classes\Models\Product.cs" />
-    <Compile Include="Classes\Models\Provider.cs" />
     <Compile Include="Classes\Models\Recipe.cs" />
     <Compile Include="Classes\Models\Sell.cs" />
     <Compile Include="Classes\Models\Unit.cs" />
@@ -112,29 +110,35 @@
     <Compile Include="Forms\DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductsActions\Brand\BrandAddForm.cs">
+    <Compile Include="Forms\ProductsActions\BrandActions\BrandAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductsActions\Brand\BrandAddForm.Designer.cs">
+    <Compile Include="Forms\ProductsActions\BrandActions\BrandAddForm.Designer.cs">
       <DependentUpon>BrandAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductsActions\Category\CategoryAddForm.cs">
+    <Compile Include="Forms\ProductsActions\BrandActions\BrandModifyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductsActions\Category\CategoryAddForm.Designer.cs">
+    <Compile Include="Forms\ProductsActions\BrandActions\BrandModifyForm.Designer.cs">
+      <DependentUpon>BrandModifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\CategoryActions\CategoryAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\CategoryActions\CategoryAddForm.Designer.cs">
       <DependentUpon>CategoryAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\CategoryActions\CategoryModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\CategoryActions\CategoryModifyForm.Designer.cs">
+      <DependentUpon>CategoryModifyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProductsActions\ProductFormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ProductsActions\ProductFormAdd.Designer.cs">
       <DependentUpon>ProductFormAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ProductsActions\Provider\ProviderAddFrom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ProductsActions\Provider\ProviderAddFrom.Designer.cs">
-      <DependentUpon>ProviderAddFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProductsForm.cs">
       <SubType>UserControl</SubType>
@@ -198,17 +202,20 @@
     <EmbeddedResource Include="Forms\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductsActions\Brand\BrandAddForm.resx">
+    <EmbeddedResource Include="Forms\ProductsActions\BrandActions\BrandAddForm.resx">
       <DependentUpon>BrandAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductsActions\Category\CategoryAddForm.resx">
+    <EmbeddedResource Include="Forms\ProductsActions\BrandActions\BrandModifyForm.resx">
+      <DependentUpon>BrandModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsActions\CategoryActions\CategoryAddForm.resx">
       <DependentUpon>CategoryAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsActions\CategoryActions\CategoryModifyForm.resx">
+      <DependentUpon>CategoryModifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductsActions\ProductFormAdd.resx">
       <DependentUpon>ProductFormAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductsActions\Provider\ProviderAddFrom.resx">
-      <DependentUpon>ProviderAddFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductsForm.resx">
       <DependentUpon>ProductsForm.cs</DependentUpon>
@@ -272,7 +279,10 @@
     <None Include="Resources\Users.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Search.png" />
+    <Content Include="Resources\Accept.png" />
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\Decline.png" />
+    <Content Include="Resources\Delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using LiteDB;
 using ShopModule.Classes.Controllers;
 using ShopModule.Classes.Models;
+using ShopModule.CustomControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,14 +12,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShopModule.Forms.ProductsActions
+namespace ShopModule.Forms.ProductsActions.BrandActions
 {
-    public partial class CategoryAddForm : TemplateForm
+    public partial class BrandModifyForm : TemplateForm
     {
-        public CategoryAddForm()
+        private Brand brand;
+        public BrandModifyForm(Brand brand)
         {
-            this.WindowName.Text = "Categoria - Agregrar";
+            this.WindowName.Text = "Marca - Modificar";
+            this.brand = brand;
             InitializeComponent();
+            txtField.Text = this.brand.Description;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -29,18 +33,17 @@ namespace ShopModule.Forms.ProductsActions
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if(!(txtField.Text == ""))
+            if (!(txtField.Text == ""))
             {
-                CategoryController controller = new CategoryController();
-                var item = controller.Count(Query.All()) + 1;
+                BrandController controller = new BrandController();
 
-                Category cat = new Category()
+                Brand brand = new Brand()
                 {
-                    Id = item,
+                    Id = this.brand.Id,
                     Description = txtField.Text
                 };
 
-                controller.Add(cat);
+                controller.Add(brand);
             }
             else
             {

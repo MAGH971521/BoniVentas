@@ -32,8 +32,6 @@
             this.pnlSearchForm = new ShopModule.CustomControls.BorderPanel();
             this.cbCategory = new ShopModule.CustomControls.CustomComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbProvider = new ShopModule.CustomControls.CustomComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbBrand = new ShopModule.CustomControls.CustomComboBox();
             this.btnResetSearch = new ShopModule.CustomControls.FlatButton();
             this.txtFirstPattern = new ShopModule.CustomControls.FieldBox();
@@ -62,8 +60,6 @@
             // 
             this.pnlSearchForm.Controls.Add(this.cbCategory);
             this.pnlSearchForm.Controls.Add(this.label2);
-            this.pnlSearchForm.Controls.Add(this.cbProvider);
-            this.pnlSearchForm.Controls.Add(this.label1);
             this.pnlSearchForm.Controls.Add(this.cbBrand);
             this.pnlSearchForm.Controls.Add(this.btnResetSearch);
             this.pnlSearchForm.Controls.Add(this.txtFirstPattern);
@@ -75,7 +71,7 @@
             this.pnlSearchForm.Location = new System.Drawing.Point(0, 70);
             this.pnlSearchForm.Name = "pnlSearchForm";
             this.pnlSearchForm.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
-            this.pnlSearchForm.Size = new System.Drawing.Size(700, 202);
+            this.pnlSearchForm.Size = new System.Drawing.Size(700, 184);
             this.pnlSearchForm.TabIndex = 12;
             // 
             // cbCategory
@@ -84,7 +80,7 @@
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(323, 53);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(265, 29);
+            this.cbCategory.Size = new System.Drawing.Size(203, 29);
             this.cbCategory.TabIndex = 19;
             // 
             // label2
@@ -96,31 +92,13 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Marca:";
             // 
-            // cbProvider
-            // 
-            this.cbProvider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbProvider.FormattingEnabled = true;
-            this.cbProvider.Location = new System.Drawing.Point(140, 133);
-            this.cbProvider.Name = "cbProvider";
-            this.cbProvider.Size = new System.Drawing.Size(284, 29);
-            this.cbProvider.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 141);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 21);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Proveedor:";
-            // 
             // cbBrand
             // 
             this.cbBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbBrand.FormattingEnabled = true;
             this.cbBrand.Location = new System.Drawing.Point(140, 93);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(284, 29);
+            this.cbBrand.Size = new System.Drawing.Size(386, 29);
             this.cbBrand.TabIndex = 15;
             // 
             // btnResetSearch
@@ -130,7 +108,7 @@
             this.btnResetSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.btnResetSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetSearch.ForeColor = System.Drawing.Color.White;
-            this.btnResetSearch.Location = new System.Drawing.Point(518, 93);
+            this.btnResetSearch.Location = new System.Drawing.Point(554, 92);
             this.btnResetSearch.Name = "btnResetSearch";
             this.btnResetSearch.Size = new System.Drawing.Size(100, 30);
             this.btnResetSearch.TabIndex = 14;
@@ -182,7 +160,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(518, 129);
+            this.btnSearch.Location = new System.Drawing.Point(554, 128);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 30);
             this.btnSearch.TabIndex = 5;
@@ -269,8 +247,6 @@
         #endregion
 
         private CustomControls.BorderPanel pnlSearchForm;
-        private CustomControls.CustomComboBox cbProvider;
-        private System.Windows.Forms.Label label1;
         private CustomControls.CustomComboBox cbBrand;
         private CustomControls.FlatButton btnResetSearch;
         private CustomControls.FieldBox txtFirstPattern;

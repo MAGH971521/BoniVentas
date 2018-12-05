@@ -11,42 +11,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShopModule.Forms.ProductsActions
+namespace ShopModule.Forms.ProductsActions.CategoryActions
 {
-    public partial class BrandAddForm : TemplateForm
+    public partial class CategoryModifyForm : TemplateForm
     {
-        public BrandAddForm()
+        private Category cat;
+        public CategoryModifyForm(Category cat)
         {
-            this.WindowName.Text = "Marca - Agregar";
+            this.WindowName.Text = "Categoria - Modificar";
             InitializeComponent();
-        }
-
-        private void btnAccept_Click(object sender, EventArgs e)
-        {
-            if (!(txtField.Text == ""))
-            {
-                BrandController controller = new BrandController();
-                var item = controller.Count(Query.All()) + 1;
-
-                Brand brand = new Brand()
-                {
-                    Id = item,
-                    Description = txtField.Text
-                };
-
-                controller.Add(brand);
-            }
-            else
-            {
-                txtField.Controls[0].BackColor = Color.FromArgb(192, 57, 43);
-                txtField.Focus();
-            }
+            txtField.Text = this.cat.Description;
+            this.cat = cat;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtField.Text = "";
             this.Hide();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            if (!(txtField.Text == ""))
+            {
+                CategoryController controller = new CategoryController();
+
+                Category vat = new Category()
+                {
+                    Id = cat.Id,
+                    Description = txtField.Text
+                };
+
+                controller.Update(cat);
+            }
+            else
+            {
+                txtField.Controls[0].BackColor = Color.FromArgb(192, 57, 43);
+                txtField.Focus();
+            }
         }
     }
 }

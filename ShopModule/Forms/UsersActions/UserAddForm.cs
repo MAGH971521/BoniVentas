@@ -19,8 +19,7 @@ namespace ShopModule.Forms.UsersActions
 {
     public partial class UserAddForm : TemplateForm
     {
-
-        OpenFileDialog open = new OpenFileDialog();
+        
         private const string Pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
 
         public UserAddForm()
@@ -63,14 +62,13 @@ namespace ShopModule.Forms.UsersActions
                 && txtConfirm.Text != null)
            {
                 UserController controller = new UserController();
-                int newId = controller.Count(Query.All()) + 1;
+                
                 try
                 {
                     UserType type;
                     Enum.TryParse(cbUserType.SelectedValue.ToString(), out type);
                     User user = new User()
                     {
-                        Id = newId,
                         Name = txtFirstName.Text,
                         LastName = txtLastName.Text,
                         Birthday = dpBirth.Value,

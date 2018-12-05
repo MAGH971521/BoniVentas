@@ -98,7 +98,6 @@
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMail.Location = new System.Drawing.Point(303, 77);
             this.txtMail.Name = "txtMail";
-            this.txtMail.PasswordChar = '*';
             this.txtMail.Size = new System.Drawing.Size(301, 20);
             this.txtMail.TabIndex = 25;
             // 

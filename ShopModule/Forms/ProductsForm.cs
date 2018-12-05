@@ -23,7 +23,6 @@ namespace ShopModule.Forms
 
             CategoryController catController = new CategoryController();
             BrandController brandController = new BrandController();
-            ProviderController provController = new ProviderController();
 
             cbBrand.Items.Add("All");
             cbCategory.Items.Add("All");
@@ -36,10 +35,6 @@ namespace ShopModule.Forms
             foreach(var item in catController.Select(Query.All()))
             {
                 cbCategory.Items.Add(item.Description);
-            }
-            foreach(var item in provController.Select(Query.All()))
-            {
-                cbProvider.Items.Add(item.Description);
             }
 
         }
