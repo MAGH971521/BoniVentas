@@ -134,6 +134,7 @@
             this.btnAccess_Productos.Text = "Productos";
             this.btnAccess_Productos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccess_Productos.UseVisualStyleBackColor = true;
+            this.btnAccess_Productos.Click += new System.EventHandler(this.btnAccess_Productos_Click);
             // 
             // btnAccess_Ventas
             // 

@@ -86,8 +86,9 @@ namespace ShopModule.Forms
                 if(MessageBox.Show("¿Esta seguro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     controller.Delete(user);
-                    dgUsers.SelectedRows[0].Visible = false;
-                } else
+                    dgUsers.Refresh();
+                }
+                else
                 {
                     user = null;
                 }
@@ -123,5 +124,6 @@ namespace ShopModule.Forms
             }
             dgUsers.Refresh();
         }
+        
     }
 }

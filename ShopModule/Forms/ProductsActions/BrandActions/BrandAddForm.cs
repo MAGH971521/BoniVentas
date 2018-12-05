@@ -1,6 +1,5 @@
 ﻿using LiteDB;
 using ShopModule.Classes.Controllers;
-using ShopModule.Classes.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +27,7 @@ namespace ShopModule.Forms.ProductsActions
                 BrandController controller = new BrandController();
                 var item = controller.Count(Query.All()) + 1;
 
-                Brand brand = new Brand()
+                Classes.Models.Brand brand = new Classes.Models.Brand()
                 {
                     Id = item,
                     Description = txtField.Text

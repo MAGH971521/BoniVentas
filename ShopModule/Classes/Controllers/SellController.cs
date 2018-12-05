@@ -14,7 +14,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Sell>("brands");
+                var col = db.GetCollection<Sell>("sell");
                 col.Insert(sell);
             }
         }
@@ -23,7 +23,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Sell>("brands");
+                var col = db.GetCollection<Sell>("sell");
                 col.Insert(sells);
             }
         }
@@ -32,7 +32,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Sell>("brands");
+                var col = db.GetCollection<Sell>("sell");
                 col.Delete(sell.Id);
             }
         }
@@ -41,7 +41,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Sell>("brands");
+                var col = db.GetCollection<Sell>("sell");
                 return col.Find(query).ToList();
             }
         }
@@ -50,7 +50,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Sell>("brands");
+                var col = db.GetCollection<Sell>("sell");
                 col.Update(sell);
             }
         }

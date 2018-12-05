@@ -1,6 +1,6 @@
-﻿namespace ShopModule.Forms.ProductsActions.Provider
+﻿namespace ShopModule.Forms.ProductsActions.BrandActions
 {
-    partial class ProviderAddFrom
+    partial class BrandModifyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -52,10 +52,10 @@
             // txtField
             // 
             this.txtField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtField.Location = new System.Drawing.Point(148, 90);
+            this.txtField.Location = new System.Drawing.Point(143, 86);
             this.txtField.Name = "txtField";
             this.txtField.Size = new System.Drawing.Size(167, 20);
-            this.txtField.TabIndex = 14;
+            this.txtField.TabIndex = 18;
             // 
             // btnCancel
             // 
@@ -64,10 +64,10 @@
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(201, 145);
+            this.btnCancel.Location = new System.Drawing.Point(196, 141);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 30);
-            this.btnCancel.TabIndex = 13;
+            this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -79,10 +79,10 @@
             this.btnAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccept.ForeColor = System.Drawing.Color.White;
-            this.btnAccept.Location = new System.Drawing.Point(65, 145);
+            this.btnAccept.Location = new System.Drawing.Point(60, 141);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(100, 30);
-            this.btnAccept.TabIndex = 12;
+            this.btnAccept.TabIndex = 16;
             this.btnAccept.Text = "Aceptar";
             this.btnAccept.UseVisualStyleBackColor = false;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
@@ -90,13 +90,13 @@
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(48, 89);
+            this.lblDesc.Location = new System.Drawing.Point(43, 85);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(94, 21);
-            this.lblDesc.TabIndex = 11;
+            this.lblDesc.TabIndex = 15;
             this.lblDesc.Text = "Descripcion:";
             // 
-            // ProviderAddFrom
+            // BrandModifyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,8 +105,8 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.lblDesc);
-            this.Name = "ProviderAddFrom";
-            this.Text = "ProviderAddFrom";
+            this.Name = "BrandModifyForm";
+            this.Text = "BrandModifyForm";
             this.Controls.SetChildIndex(this.lblDesc, 0);
             this.Controls.SetChildIndex(this.btnAccept, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);

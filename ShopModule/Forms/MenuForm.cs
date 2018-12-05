@@ -82,5 +82,14 @@ namespace ShopModule.Forms
                 Dock = DockStyle.Fill
             });
         }
+
+        private void btnAccess_Productos_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(new ProductsForm()
+            {
+                Dock = DockStyle.Fill
+            });
+        }
     }
 }

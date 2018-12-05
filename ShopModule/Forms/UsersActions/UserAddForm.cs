@@ -64,6 +64,7 @@ namespace ShopModule.Forms.UsersActions
            {
                 UserController controller = new UserController();
                 int newId = controller.Count(Query.All()) + 1;
+                
                 try
                 {
                     UserType type;

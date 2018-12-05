@@ -14,7 +14,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Buy>("brands");
+                var col = db.GetCollection<Buy>("buy");
                 col.Insert(buy);
             }
         }
@@ -23,8 +23,17 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Buy>("brands");
+                var col = db.GetCollection<Buy>("buy");
                 col.Insert(buys);
+            }
+        }
+
+        public int Count(Query query)
+        {
+            using (LiteDatabase db = new LiteDatabase("my.db"))
+            {
+                var col = db.GetCollection<Buy>("buy");
+                return col.Find(query).Count();
             }
         }
 
@@ -32,7 +41,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Buy>("brands");
+                var col = db.GetCollection<Buy>("buy");
                 col.Delete(buy.Id);
             }
         }
@@ -41,7 +50,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Buy>("brands");
+                var col = db.GetCollection<Buy>("buy");
                 return col.Find(query).ToList();
             }
         }
@@ -50,7 +59,7 @@ namespace ShopModule.Classes.Controllers
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))
             {
-                var col = db.GetCollection<Buy>("brands");
+                var col = db.GetCollection<Buy>("buy");
                 col.Update(buy);
             }
         }

@@ -28,32 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductFormAdd));
             this.label1 = new System.Windows.Forms.Label();
             this.borderPanel1 = new ShopModule.CustomControls.BorderPanel();
-            this.txtPrice = new ShopModule.CustomControls.FieldBox();
-            this.txtCost = new ShopModule.CustomControls.FieldBox();
-            this.btnDeleteProvider = new ShopModule.CustomControls.RoundButton();
-            this.btnModifyProvider = new ShopModule.CustomControls.RoundButton();
+            this.txtMax = new ShopModule.CustomControls.FieldBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnAddProvider = new ShopModule.CustomControls.RoundButton();
+            this.txtMin = new ShopModule.CustomControls.FieldBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnDeleteBrand = new ShopModule.CustomControls.RoundButton();
-            this.btnModifyBrand = new ShopModule.CustomControls.RoundButton();
-            this.btnAddBrand = new ShopModule.CustomControls.RoundButton();
             this.btnDeleteCategory = new ShopModule.CustomControls.RoundButton();
             this.btnModifyCategory = new ShopModule.CustomControls.RoundButton();
             this.btnAddCategory = new ShopModule.CustomControls.RoundButton();
             this.cbCategory = new ShopModule.CustomControls.CustomComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbProvider = new ShopModule.CustomControls.CustomComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbBrand = new ShopModule.CustomControls.CustomComboBox();
             this.lblParam3 = new System.Windows.Forms.Label();
             this.txtName = new ShopModule.CustomControls.CustomTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnCancel = new ShopModule.CustomControls.FlatButton();
+            this.btnAccept = new ShopModule.CustomControls.FlatButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.borderPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 12);
+            this.label1.Location = new System.Drawing.Point(23, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 1;
@@ -83,145 +73,56 @@
             // 
             // borderPanel1
             // 
-            this.borderPanel1.Controls.Add(this.txtPrice);
-            this.borderPanel1.Controls.Add(this.txtCost);
-            this.borderPanel1.Controls.Add(this.btnDeleteProvider);
-            this.borderPanel1.Controls.Add(this.btnModifyProvider);
+            this.borderPanel1.Controls.Add(this.label2);
+            this.borderPanel1.Controls.Add(this.txtMax);
             this.borderPanel1.Controls.Add(this.label7);
-            this.borderPanel1.Controls.Add(this.btnAddProvider);
+            this.borderPanel1.Controls.Add(this.txtMin);
             this.borderPanel1.Controls.Add(this.label6);
-            this.borderPanel1.Controls.Add(this.btnDeleteBrand);
-            this.borderPanel1.Controls.Add(this.btnModifyBrand);
-            this.borderPanel1.Controls.Add(this.btnAddBrand);
             this.borderPanel1.Controls.Add(this.btnDeleteCategory);
             this.borderPanel1.Controls.Add(this.btnModifyCategory);
             this.borderPanel1.Controls.Add(this.btnAddCategory);
             this.borderPanel1.Controls.Add(this.cbCategory);
-            this.borderPanel1.Controls.Add(this.label2);
-            this.borderPanel1.Controls.Add(this.cbProvider);
-            this.borderPanel1.Controls.Add(this.label9);
-            this.borderPanel1.Controls.Add(this.cbBrand);
             this.borderPanel1.Controls.Add(this.lblParam3);
             this.borderPanel1.Controls.Add(this.txtName);
             this.borderPanel1.Controls.Add(this.label1);
-            this.borderPanel1.Location = new System.Drawing.Point(54, 58);
+            this.borderPanel1.Location = new System.Drawing.Point(48, 58);
             this.borderPanel1.Name = "borderPanel1";
             this.borderPanel1.Size = new System.Drawing.Size(597, 161);
             this.borderPanel1.TabIndex = 9;
             // 
-            // txtPrice
+            // txtMax
             // 
-            this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrice.Location = new System.Drawing.Point(550, 51);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(38, 20);
-            this.txtPrice.TabIndex = 39;
-            // 
-            // txtCost
-            // 
-            this.txtCost.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCost.Location = new System.Drawing.Point(550, 28);
-            this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(38, 20);
-            this.txtCost.TabIndex = 38;
-            // 
-            // btnDeleteProvider
-            // 
-            this.btnDeleteProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.btnDeleteProvider.FlatAppearance.BorderSize = 0;
-            this.btnDeleteProvider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnDeleteProvider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteProvider.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteProvider.Location = new System.Drawing.Point(368, 112);
-            this.btnDeleteProvider.Name = "btnDeleteProvider";
-            this.btnDeleteProvider.Size = new System.Drawing.Size(25, 25);
-            this.btnDeleteProvider.TabIndex = 37;
-            this.btnDeleteProvider.UseVisualStyleBackColor = false;
-            // 
-            // btnModifyProvider
-            // 
-            this.btnModifyProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
-            this.btnModifyProvider.FlatAppearance.BorderSize = 0;
-            this.btnModifyProvider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnModifyProvider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyProvider.ForeColor = System.Drawing.Color.White;
-            this.btnModifyProvider.Location = new System.Drawing.Point(337, 112);
-            this.btnModifyProvider.Name = "btnModifyProvider";
-            this.btnModifyProvider.Size = new System.Drawing.Size(25, 25);
-            this.btnModifyProvider.TabIndex = 36;
-            this.btnModifyProvider.UseVisualStyleBackColor = false;
+            this.txtMax.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMax.Location = new System.Drawing.Point(424, 115);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(158, 20);
+            this.txtMax.TabIndex = 39;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(488, 50);
+            this.label7.Location = new System.Drawing.Point(420, 80);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 21);
+            this.label7.Size = new System.Drawing.Size(164, 21);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Precio:";
+            this.label7.Text = "Maximo en Inventario:";
             // 
-            // btnAddProvider
+            // txtMin
             // 
-            this.btnAddProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAddProvider.FlatAppearance.BorderSize = 0;
-            this.btnAddProvider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnAddProvider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProvider.ForeColor = System.Drawing.Color.White;
-            this.btnAddProvider.Location = new System.Drawing.Point(306, 113);
-            this.btnAddProvider.Name = "btnAddProvider";
-            this.btnAddProvider.Size = new System.Drawing.Size(25, 25);
-            this.btnAddProvider.TabIndex = 35;
-            this.btnAddProvider.UseVisualStyleBackColor = false;
-            this.btnAddProvider.Click += new System.EventHandler(this.btnAddProvider_Click);
+            this.txtMin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMin.Location = new System.Drawing.Point(424, 51);
+            this.txtMin.Name = "txtMin";
+            this.txtMin.Size = new System.Drawing.Size(158, 20);
+            this.txtMin.TabIndex = 38;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(488, 27);
+            this.label6.Location = new System.Drawing.Point(420, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 21);
+            this.label6.Size = new System.Drawing.Size(162, 21);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Costo:";
-            // 
-            // btnDeleteBrand
-            // 
-            this.btnDeleteBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.btnDeleteBrand.FlatAppearance.BorderSize = 0;
-            this.btnDeleteBrand.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnDeleteBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteBrand.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBrand.Location = new System.Drawing.Point(368, 80);
-            this.btnDeleteBrand.Name = "btnDeleteBrand";
-            this.btnDeleteBrand.Size = new System.Drawing.Size(25, 25);
-            this.btnDeleteBrand.TabIndex = 34;
-            this.btnDeleteBrand.UseVisualStyleBackColor = false;
-            // 
-            // btnModifyBrand
-            // 
-            this.btnModifyBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
-            this.btnModifyBrand.FlatAppearance.BorderSize = 0;
-            this.btnModifyBrand.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnModifyBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyBrand.ForeColor = System.Drawing.Color.White;
-            this.btnModifyBrand.Location = new System.Drawing.Point(337, 80);
-            this.btnModifyBrand.Name = "btnModifyBrand";
-            this.btnModifyBrand.Size = new System.Drawing.Size(25, 25);
-            this.btnModifyBrand.TabIndex = 33;
-            this.btnModifyBrand.UseVisualStyleBackColor = false;
-            // 
-            // btnAddBrand
-            // 
-            this.btnAddBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAddBrand.FlatAppearance.BorderSize = 0;
-            this.btnAddBrand.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnAddBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddBrand.ForeColor = System.Drawing.Color.White;
-            this.btnAddBrand.Location = new System.Drawing.Point(306, 81);
-            this.btnAddBrand.Name = "btnAddBrand";
-            this.btnAddBrand.Size = new System.Drawing.Size(25, 25);
-            this.btnAddBrand.TabIndex = 32;
-            this.btnAddBrand.UseVisualStyleBackColor = false;
-            this.btnAddBrand.Click += new System.EventHandler(this.btnAddBrand_Click);
+            this.label6.Text = "Minimo en Inventario:";
             // 
             // btnDeleteCategory
             // 
@@ -230,11 +131,12 @@
             this.btnDeleteCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnDeleteCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteCategory.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCategory.Location = new System.Drawing.Point(368, 45);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(375, 58);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(25, 25);
             this.btnDeleteCategory.TabIndex = 31;
             this.btnDeleteCategory.UseVisualStyleBackColor = false;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // btnModifyCategory
             // 
@@ -243,20 +145,23 @@
             this.btnModifyCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnModifyCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifyCategory.ForeColor = System.Drawing.Color.White;
-            this.btnModifyCategory.Location = new System.Drawing.Point(337, 45);
+            this.btnModifyCategory.Location = new System.Drawing.Point(344, 57);
             this.btnModifyCategory.Name = "btnModifyCategory";
             this.btnModifyCategory.Size = new System.Drawing.Size(25, 25);
             this.btnModifyCategory.TabIndex = 30;
             this.btnModifyCategory.UseVisualStyleBackColor = false;
+            this.btnModifyCategory.Click += new System.EventHandler(this.btnModifyCategory_Click);
             // 
             // btnAddCategory
             // 
             this.btnAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAddCategory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddCategory.BackgroundImage")));
+            this.btnAddCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAddCategory.FlatAppearance.BorderSize = 0;
             this.btnAddCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCategory.ForeColor = System.Drawing.Color.White;
-            this.btnAddCategory.Location = new System.Drawing.Point(306, 46);
+            this.btnAddCategory.Location = new System.Drawing.Point(313, 58);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(25, 25);
             this.btnAddCategory.TabIndex = 29;
@@ -267,51 +172,15 @@
             // 
             this.cbCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(122, 42);
+            this.cbCategory.Location = new System.Drawing.Point(109, 54);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(178, 29);
+            this.cbCategory.Size = new System.Drawing.Size(198, 29);
             this.cbCategory.TabIndex = 25;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 21);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Marca:";
-            // 
-            // cbProvider
-            // 
-            this.cbProvider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbProvider.FormattingEnabled = true;
-            this.cbProvider.Location = new System.Drawing.Point(122, 111);
-            this.cbProvider.Name = "cbProvider";
-            this.cbProvider.Size = new System.Drawing.Size(178, 29);
-            this.cbProvider.TabIndex = 23;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 21);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Proveedor:";
-            // 
-            // cbBrand
-            // 
-            this.cbBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbBrand.FormattingEnabled = true;
-            this.cbBrand.Location = new System.Drawing.Point(122, 76);
-            this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(178, 29);
-            this.cbBrand.TabIndex = 21;
             // 
             // lblParam3
             // 
             this.lblParam3.AutoSize = true;
-            this.lblParam3.Location = new System.Drawing.Point(16, 50);
+            this.lblParam3.Location = new System.Drawing.Point(23, 62);
             this.lblParam3.Name = "lblParam3";
             this.lblParam3.Size = new System.Drawing.Size(80, 21);
             this.lblParam3.TabIndex = 20;
@@ -320,69 +189,66 @@
             // txtName
             // 
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Location = new System.Drawing.Point(93, 13);
+            this.txtName.Location = new System.Drawing.Point(109, 23);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(207, 20);
+            this.txtName.Size = new System.Drawing.Size(198, 20);
             this.txtName.TabIndex = 2;
             // 
-            // label3
+            // btnCancel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(382, 366);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(539, 244);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 30);
+            this.btnCancel.TabIndex = 25;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label4
+            // btnAccept
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(490, 348);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "label4";
+            this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAccept.FlatAppearance.BorderSize = 0;
+            this.btnAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccept.ForeColor = System.Drawing.Color.White;
+            this.btnAccept.Location = new System.Drawing.Point(417, 244);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(100, 30);
+            this.btnAccept.TabIndex = 24;
+            this.btnAccept.Text = "Aceptar";
+            this.btnAccept.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // label2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(302, 328);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 21);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "label5";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(482, 315);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 21);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "label8";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 21);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Es compuesto:";
             // 
             // ProductFormAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 400);
+            this.ClientSize = new System.Drawing.Size(700, 297);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.borderPanel1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Name = "ProductFormAdd";
             this.Text = "ProductFormAdd";
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.borderPanel1, 0);
+            this.Controls.SetChildIndex(this.btnAccept, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.borderPanel1.ResumeLayout(false);
             this.borderPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -392,27 +258,16 @@
         private CustomControls.BorderPanel borderPanel1;
         private CustomControls.CustomTextBox txtName;
         private CustomControls.CustomComboBox cbCategory;
-        private System.Windows.Forms.Label label2;
-        private CustomControls.CustomComboBox cbProvider;
-        private System.Windows.Forms.Label label9;
-        private CustomControls.CustomComboBox cbBrand;
         private System.Windows.Forms.Label lblParam3;
-        private CustomControls.RoundButton btnDeleteProvider;
-        private CustomControls.RoundButton btnModifyProvider;
-        private CustomControls.RoundButton btnAddProvider;
-        private CustomControls.RoundButton btnDeleteBrand;
-        private CustomControls.RoundButton btnModifyBrand;
-        private CustomControls.RoundButton btnAddBrand;
         private CustomControls.RoundButton btnDeleteCategory;
         private CustomControls.RoundButton btnModifyCategory;
         private CustomControls.RoundButton btnAddCategory;
-        private CustomControls.FieldBox txtPrice;
-        private CustomControls.FieldBox txtCost;
+        private CustomControls.FieldBox txtMax;
+        private CustomControls.FieldBox txtMin;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
+        private CustomControls.FlatButton btnCancel;
+        private CustomControls.FlatButton btnAccept;
+        private System.Windows.Forms.Label label2;
     }
 }

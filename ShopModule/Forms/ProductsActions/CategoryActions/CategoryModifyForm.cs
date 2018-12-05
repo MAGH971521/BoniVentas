@@ -11,14 +11,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShopModule.Forms.ProductsActions.Provider
+namespace ShopModule.Forms.ProductsActions.CategoryActions
 {
-    public partial class ProviderAddFrom : TemplateForm
+    public partial class CategoryModifyForm : TemplateForm
     {
-        public ProviderAddFrom()
+        private Category cat;
+        public CategoryModifyForm(Category cat)
         {
-            this.WindowName.Text = "Proveedor - Agregrar";
+            this.WindowName.Text = "Categoria - Modificar";
             InitializeComponent();
+            txtField.Text = this.cat.Description;
+            this.cat = cat;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -31,12 +34,11 @@ namespace ShopModule.Forms.ProductsActions.Provider
         {
             if (!(txtField.Text == ""))
             {
-                ProviderController controller = new ProviderController();
-                var item = controller.Count(Query.All()) + 1;
+                CategoryController controller = new CategoryController();
 
-                Provider1 cat = new Provider1()
+                Category vat = new Category()
                 {
-                    Id = item,
+                    Id = cat.Id,
                     Description = txtField.Text
                 };
 

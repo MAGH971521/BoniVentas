@@ -1,12 +1,9 @@
-﻿using ShopModule.Forms.ProductsActions.Provider;
+﻿using LiteDB;
+using ShopModule.Classes.Controllers;
+using ShopModule.Classes.Models;
+using ShopModule.Forms.ProductsActions.BrandActions;
+using ShopModule.Forms.ProductsActions.CategoryActions;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShopModule.Forms.ProductsActions
@@ -21,22 +18,49 @@ namespace ShopModule.Forms.ProductsActions
 
         }
 
+        private void ClearFields()
+        {
+            txtName.Text = "";
+            txtMin.Text = "";
+            txtMax.Text = "";
+        }
+
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             CategoryAddForm CAF = new CategoryAddForm();
             CAF.Show();
         }
 
-        private void btnAddBrand_Click(object sender, EventArgs e)
+        private void btnModifyCategory_Click(object sender, EventArgs e)
         {
-            BrandAddForm BAF = new BrandAddForm();
-            BAF.Show();
+            CategoryController controller = new CategoryController();
+            Category item = controller.Select(Query.EQ("Description", cbCategory.SelectedText))[0];
+            CategoryModifyForm CMF = new CategoryModifyForm(item);
+
+            CMF.Show();
         }
 
-        private void btnAddProvider_Click(object sender, EventArgs e)
+        private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            ProviderAddFrom PAF = new ProviderAddFrom();
-            PAF.Show();
+            if(cbCategory.SelectedText != "All")
+            {
+                CategoryController controller = new CategoryController();
+                if (MessageBox.Show("¿Esta seguro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    controller.Delete(controller.Select(Query.EQ("Description", cbCategory.SelectedText))[0]);
+                }
+                else
+                {
+                    controller = null;
+                }
+                cbCategory.Refresh();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+            this.Hide();
         }
     }
 }
