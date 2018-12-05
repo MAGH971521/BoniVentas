@@ -20,7 +20,7 @@ namespace ShopModule.Forms.UsersActions
     public partial class UserModifyForm : TemplateForm
     {
         private const string Pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
-        private User oldUser;
+        public User oldUser;
 
         public UserModifyForm(User user)
         {
@@ -53,6 +53,7 @@ namespace ShopModule.Forms.UsersActions
             dpBirth.Value = DateTime.Now;
             txtMail.Text = "";
             cbUserType.SelectedIndex = 0;
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace ShopModule.Forms.UsersActions
 
                     controller.Update(user);
                     this.Hide();
+                    this.DialogResult = DialogResult.OK;
                     ClearFields();
                 }
                 catch (Exception ex)

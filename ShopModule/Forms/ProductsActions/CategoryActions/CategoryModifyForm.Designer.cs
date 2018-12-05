@@ -60,6 +60,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -75,6 +76,7 @@
             // btnAccept
             // 
             this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAccept.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAccept.FlatAppearance.BorderSize = 0;
             this.btnAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -98,8 +100,10 @@
             // 
             // CategoryModifyForm
             // 
+            this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(350, 200);
             this.Controls.Add(this.txtField);
             this.Controls.Add(this.btnCancel);

@@ -50,10 +50,10 @@
             // dgProducts
             // 
             this.dgProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProducts.Location = new System.Drawing.Point(26, 304);
+            this.dgProducts.Location = new System.Drawing.Point(26, 252);
             this.dgProducts.Name = "dgProducts";
             this.dgProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgProducts.Size = new System.Drawing.Size(500, 273);
+            this.dgProducts.Size = new System.Drawing.Size(500, 325);
             this.dgProducts.TabIndex = 8;
             // 
             // pnlSearchForm
@@ -71,16 +71,16 @@
             this.pnlSearchForm.Location = new System.Drawing.Point(0, 70);
             this.pnlSearchForm.Name = "pnlSearchForm";
             this.pnlSearchForm.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
-            this.pnlSearchForm.Size = new System.Drawing.Size(700, 184);
+            this.pnlSearchForm.Size = new System.Drawing.Size(700, 158);
             this.pnlSearchForm.TabIndex = 12;
             // 
             // cbCategory
             // 
             this.cbCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(323, 53);
+            this.cbCategory.Location = new System.Drawing.Point(303, 53);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(203, 29);
+            this.cbCategory.Size = new System.Drawing.Size(180, 29);
             this.cbCategory.TabIndex = 19;
             // 
             // label2
@@ -96,9 +96,9 @@
             // 
             this.cbBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbBrand.FormattingEnabled = true;
-            this.cbBrand.Location = new System.Drawing.Point(140, 93);
+            this.cbBrand.Location = new System.Drawing.Point(96, 93);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(386, 29);
+            this.cbBrand.Size = new System.Drawing.Size(201, 29);
             this.cbBrand.TabIndex = 15;
             // 
             // btnResetSearch
@@ -108,7 +108,7 @@
             this.btnResetSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.btnResetSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetSearch.ForeColor = System.Drawing.Color.White;
-            this.btnResetSearch.Location = new System.Drawing.Point(554, 92);
+            this.btnResetSearch.Location = new System.Drawing.Point(555, 55);
             this.btnResetSearch.Name = "btnResetSearch";
             this.btnResetSearch.Size = new System.Drawing.Size(100, 30);
             this.btnResetSearch.TabIndex = 14;
@@ -160,7 +160,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(554, 128);
+            this.btnSearch.Location = new System.Drawing.Point(555, 91);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 30);
             this.btnSearch.TabIndex = 5;
@@ -209,6 +209,7 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblTitle
             // 

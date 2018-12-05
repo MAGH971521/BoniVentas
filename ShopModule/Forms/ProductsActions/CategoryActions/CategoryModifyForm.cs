@@ -20,13 +20,14 @@ namespace ShopModule.Forms.ProductsActions.CategoryActions
         {
             this.WindowName.Text = "Categoria - Modificar";
             InitializeComponent();
-            txtField.Text = this.cat.Description;
+            txtField.Text = cat.Description;
             this.cat = cat;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtField.Text = "";
+            this.DialogResult = DialogResult.Cancel;
             this.Hide();
         }
 
@@ -43,6 +44,9 @@ namespace ShopModule.Forms.ProductsActions.CategoryActions
                 };
 
                 controller.Update(cat);
+                txtField.Text = "";
+                this.DialogResult = DialogResult.OK;
+                this.Hide();
             }
             else
             {

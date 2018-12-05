@@ -13,6 +13,9 @@ namespace ShopModule.Classes.Models
         [BsonRef("Unit")]
         public Unit Unit { get; set; }
 
+        [BsonRef("Brand")]
+        public Brand Brand { get; set; }
+
         public int Min { get; set; }
         public int Max { get; set; }
         public float Stock { get; set; }

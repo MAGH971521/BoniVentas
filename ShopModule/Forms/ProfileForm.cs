@@ -32,7 +32,15 @@ namespace ShopModule.Forms
         private void btnMod_Click(object sender, EventArgs e)
         {
             UserModifyForm UMF = new UserModifyForm(user);
-            UMF.Show();
+            if(UMF.ShowDialog() == DialogResult.OK)
+            {
+                txtName.Text = UMF.oldUser.Name;
+                txtLastName.Text = UMF.oldUser.LastName;
+                txtMail.Text = UMF.oldUser.EmailAddress;
+                dpBirth.Value = UMF.oldUser.Birthday;
+                txtUser.Text = UMF.oldUser.Username;
+                txtPswd.Text = txtConfirm.Text = Miscs.DecryptPassword(UMF.oldUser.Pswd);
+            }
         }
     }
 }
