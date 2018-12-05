@@ -25,11 +25,9 @@ namespace ShopModule.Forms.ProductsActions
             if (!(txtField.Text == ""))
             {
                 BrandController controller = new BrandController();
-                var item = controller.Count(Query.All()) + 1;
 
                 Classes.Models.Brand brand = new Classes.Models.Brand()
                 {
-                    Id = item,
                     Description = txtField.Text
                 };
 

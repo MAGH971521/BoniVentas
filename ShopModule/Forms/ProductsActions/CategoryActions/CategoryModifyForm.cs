@@ -42,7 +42,7 @@ namespace ShopModule.Forms.ProductsActions.CategoryActions
                     Description = txtField.Text
                 };
 
-                controller.Add(cat);
+                controller.Update(cat);
             }
             else
             {

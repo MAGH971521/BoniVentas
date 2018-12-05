@@ -32,11 +32,9 @@ namespace ShopModule.Forms.ProductsActions
             if(!(txtField.Text == ""))
             {
                 CategoryController controller = new CategoryController();
-                var item = controller.Count(Query.All()) + 1;
 
                 Category cat = new Category()
                 {
-                    Id = item,
                     Description = txtField.Text
                 };
 

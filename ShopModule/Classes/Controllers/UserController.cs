@@ -50,6 +50,16 @@ namespace ShopModule.Classes.Controllers
             }
         }
 
+        public int Max(Query query = null)
+        {
+            using (LiteDatabase db = new LiteDatabase("my.db"))
+            {
+                var col = db.GetCollection<User>("users");
+                col.EnsureIndex(x => x.Id, true);
+                return col.Find(query).Max().Id;
+            }
+        }
+
         public List<User> Select(Query query = null)
         {
             using (LiteDatabase db = new LiteDatabase("my.db"))

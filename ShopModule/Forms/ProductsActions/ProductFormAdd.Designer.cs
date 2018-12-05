@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductFormAdd));
             this.label1 = new System.Windows.Forms.Label();
             this.borderPanel1 = new ShopModule.CustomControls.BorderPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtMax = new ShopModule.CustomControls.FieldBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMin = new ShopModule.CustomControls.FieldBox();
@@ -43,7 +44,8 @@
             this.txtName = new ShopModule.CustomControls.CustomTextBox();
             this.btnCancel = new ShopModule.CustomControls.FlatButton();
             this.btnAccept = new ShopModule.CustomControls.FlatButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.radYes = new System.Windows.Forms.RadioButton();
+            this.radNo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.borderPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +75,8 @@
             // 
             // borderPanel1
             // 
+            this.borderPanel1.Controls.Add(this.radNo);
+            this.borderPanel1.Controls.Add(this.radYes);
             this.borderPanel1.Controls.Add(this.label2);
             this.borderPanel1.Controls.Add(this.txtMax);
             this.borderPanel1.Controls.Add(this.label7);
@@ -89,6 +93,15 @@
             this.borderPanel1.Name = "borderPanel1";
             this.borderPanel1.Size = new System.Drawing.Size(597, 161);
             this.borderPanel1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 21);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Es compuesto:";
             // 
             // txtMax
             // 
@@ -223,14 +236,27 @@
             this.btnAccept.Text = "Aceptar";
             this.btnAccept.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // radYes
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 21);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Es compuesto:";
+            this.radYes.AutoSize = true;
+            this.radYes.Location = new System.Drawing.Point(138, 115);
+            this.radYes.Name = "radYes";
+            this.radYes.Size = new System.Drawing.Size(41, 25);
+            this.radYes.TabIndex = 41;
+            this.radYes.TabStop = true;
+            this.radYes.Text = "Si";
+            this.radYes.UseVisualStyleBackColor = true;
+            // 
+            // radNo
+            // 
+            this.radNo.AutoSize = true;
+            this.radNo.Location = new System.Drawing.Point(185, 115);
+            this.radNo.Name = "radNo";
+            this.radNo.Size = new System.Drawing.Size(49, 25);
+            this.radNo.TabIndex = 42;
+            this.radNo.TabStop = true;
+            this.radNo.Text = "No";
+            this.radNo.UseVisualStyleBackColor = true;
             // 
             // ProductFormAdd
             // 
@@ -269,5 +295,7 @@
         private CustomControls.FlatButton btnCancel;
         private CustomControls.FlatButton btnAccept;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton radNo;
+        private System.Windows.Forms.RadioButton radYes;
     }
 }
