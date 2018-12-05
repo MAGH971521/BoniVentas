@@ -17,7 +17,7 @@ namespace ShopModule.Forms.ProductsActions
             this.WindowName.Text = "Productos - Agregar";
 
             ReloadCategoryBox();
-            ReloadBrand();
+            ReloadBrandBoxs();
         }
 
         private void ClearFields()
