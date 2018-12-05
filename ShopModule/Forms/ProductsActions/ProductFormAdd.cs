@@ -106,10 +106,9 @@ namespace ShopModule.Forms.ProductsActions
             ProductController productController = new ProductController();
             if (txtName.Text == "") return;
             prod.Name = txtName.Text;
-
-            var algo = cbCategory.SelectedValue;
-            prod.Category = categoryController.Select(Query.EQ("Description", cbCategory.SelectedValue.ToString()))[0];
-            prod.Brand = brandController.Select(Query.EQ("Description", cbBrand.SelectedValue.ToString()))[0];
+            
+            prod.Category = categoryController.Select(Query.EQ("Description", cbCategory.SelectedItem.ToString()))[0];
+            prod.Brand = brandController.Select(Query.EQ("Description", cbBrand.SelectedItem.ToString()))[0];
             prod.Min = (txtMin.Text == "" ? 0 : Convert.ToInt32(txtMin.Text));
             prod.Max = (txtMax.Text == "" ? 1000 : Convert.ToInt32(txtMax.Text));
             prod.Stock = 0;

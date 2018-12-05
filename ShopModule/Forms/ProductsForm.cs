@@ -65,6 +65,22 @@ namespace ShopModule.Forms
         {
             ProductFormAdd add = new ProductFormAdd();
             add.Show();
+
+            cbBrand.Items.Clear();
+            cbCategory.Items.Clear();
+            CategoryController catController = new CategoryController();
+            BrandController brandController = new BrandController();
+            cbBrand.Items.Add("All");
+            cbCategory.Items.Add("All");
+
+            foreach (var item in brandController.Select(Query.All()))
+            {
+                cbBrand.Items.Add(item.Description);
+            }
+            foreach (var item in catController.Select(Query.All()))
+            {
+                cbCategory.Items.Add(item.Description);
+            }
         }
     }
 }
