@@ -10,18 +10,9 @@ namespace ShopModule.Classes.Models
     public class Recipe
     {
         public int Id { get; set; }
-
-        [BsonRef("product")]
-        public Product Product { get; set; }
-
-        [BsonRef("description")]
-        public RecipeDescription[] Description { get; set; }
-    }
-
-    public class RecipeDescription
-    {
-        [BsonRef("product")]
-        public Product Product { get; set; }
+        
+        public string Product { get; set; }
+        public string Ingredient { get; set; }
         public float Units { get; set; }
     }
 }

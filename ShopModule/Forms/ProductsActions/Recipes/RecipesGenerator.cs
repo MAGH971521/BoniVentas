@@ -16,20 +16,30 @@ namespace ShopModule.Forms.ProductsActions.Recipes
     public partial class RecipesGenerator : TemplateForm
     {
         private Product product;
-        private Recipe recipe;
-        private RecipeDescription[] desc;
-        public RecipesGenerator(Product product)
+        private Recipe recipe = new Recipe();
+        public RecipesGenerator(Product product, bool IsMod = false)
         {
             this.product = product;
-            this.recipe.Product = product;
             InitializeComponent();
+            dgProductsRecipe.ReadOnly = true;
             cbProductos.Items.Add("Productos");
             ProductController productController = new ProductController();
-            foreach(Product item in productController.Select(Query.All()))
+            RecipeController recipeController = new RecipeController();
+            dgProductsRecipe.DataSource = recipeController.Select(Query.EQ("Name", product.Name));
+
+
+            foreach (Product item in productController.Select(Query.All()))
             {
                 cbProductos.Items.Add(item.Name);
             }
-            dgProductsRecipe.DataSource = desc;
+
+            if(IsMod)
+            {
+                foreach (Recipe item in recipeController.Select(Query.EQ("Product", this.product.Name)))
+                {
+                    dgProductsRecipe.Rows.Add(item.Ingredient, txtUnits.Text);
+                }
+            }
         }
 
         private void ClearFields()
@@ -57,27 +67,48 @@ namespace ShopModule.Forms.ProductsActions.Recipes
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ProductController productController = new ProductController();
-            RecipeDescription aux = new RecipeDescription();
             if (cbProductos.SelectedIndex == 0) return;
-            aux.Product = productController.Select(Query.EQ("Name", cbProductos.SelectedValue.ToString()))[0];
-            if (txtUnits.Text == "") aux.Units = 0;
-            else aux.Units = Convert.ToInt32(txtUnits.Text);
-            desc[desc.Length] = aux;
+            RecipeController controller = new RecipeController();
+            ProductController productController = new ProductController();
+            recipe = new Recipe()
+            {
+                Product = product.Name,
+                Ingredient = productController.Select(Query.EQ("Name", cbProductos.SelectedText))[0].Name,
+                Units = Convert.ToInt32(txtUnits.Text)
+            };
+            controller.Add(recipe);
 
-            dgProductsRecipe.DataSource = desc;
+            dgProductsRecipe.DataSource = controller.Select(Query.EQ("Name", product.Name));
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
             ProductController productController = new ProductController();
             RecipeController recipeController = new RecipeController();
-            recipe.Description = desc;
+
+            string[] productlist = new string[] { };
+
+
             productController.Add(product);
-            recipeController.Add(recipe);
             ClearFields();
             this.DialogResult = DialogResult.OK;
             this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            recipe = new Recipe()
+            {
+                Product = product.Name,
+                Ingredient = dgProductsRecipe.SelectedRows[0].Cells["Ingredient"].Value.ToString(),
+                Units = Convert.ToInt32(dgProductsRecipe.SelectedRows[0].Cells["Units"].Value.ToString())
+            };
+
+            if (MessageBox.Show("¿Esta seguro?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                RecipeController controller = new RecipeController();
+                controller.Delete(recipe);
+            }
         }
     }
 }

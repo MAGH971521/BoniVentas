@@ -85,15 +85,17 @@ namespace ShopModule
                     User user = userController.Select(Query.EQ("Username", txtUsername.Text))[0];
                     if (user.Pswd == Classes.Misc.Miscs.EncryptPassword(txtPswd.Text))
                     {
-
                         Forms.MenuForm mF = new Forms.MenuForm("BoniVentas", pbLogo.Image, user);
                         mF.Show();
                         this.Hide();
                         txtUsername.Clear();
                         txtPswd.Clear();
-                    } else
+                    }
+                    else
                     {
-                        MessageBox.Show(user.Pswd + "\n" + Classes.Misc.Miscs.EncryptPassword(txtPswd.Text), "Error :(");
+                        MessageBox.Show("Contraseña incorrecta", "Error :(");
+                        txtPswd.Controls[0].BackColor = Color.FromArgb(192, 57, 43);
+                        txtPswd.Focus();
                     }
                 }
                 catch (Exception ex)

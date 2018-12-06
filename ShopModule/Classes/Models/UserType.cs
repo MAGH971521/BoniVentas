@@ -4,7 +4,7 @@ namespace ShopModule.Classes.Models
 {
     public enum UserType
     {
-        Admon,
-        Employee
+        Administrador,
+        Empleado
     }
 }

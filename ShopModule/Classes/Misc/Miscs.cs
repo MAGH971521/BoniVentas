@@ -14,10 +14,11 @@ namespace ShopModule.Classes.Misc
     class Miscs
     {
         private const string EncryptKey = "secret123.a32.a23";
+        public static readonly string MailPSWD = EncryptPassword("15211476");
 
         public static string EncryptPassword(string pswdDecrypt)
         {
-            byte[] clearBytes = Encoding.Unicode.GetBytes(EncryptKey);
+            byte[] clearBytes = Encoding.Unicode.GetBytes(pswdDecrypt);
             using (Aes encryptor = Aes.Create())
             {
                 Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptKey, new byte[] {
@@ -79,7 +80,7 @@ namespace ShopModule.Classes.Misc
                 user.Name = "John";
                 user.Birthday = DateTime.Now;
                 user.LastName = "Smith";
-                user.Type = UserType.Admon;
+                user.Type = UserType.Administrador;
 
                 try
                 {

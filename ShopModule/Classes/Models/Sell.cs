@@ -10,22 +10,12 @@ namespace ShopModule.Classes.Models
     public class Sell
     {
         public int Id { get; set; }
-
-        [BsonRef("seller")]
-        public User Seller { get; set; }
-
-        [BsonRef("log")]
+        
+        public string Seller { get; set; }
+        
         public DateTime Log { get; set; }
-
-        [BsonRef("description")]
-        public SellDescription Description { get; set; }
-    }
-
-    public class SellDescription
-    {
-        [BsonRef("product")]
-        public Product Product { get; set; }
+        
+        public string Product { get; set; }
         public int Units { get; set; }
-        public float SubTotal { get; set; }
     }
 }

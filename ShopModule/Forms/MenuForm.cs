@@ -34,7 +34,7 @@ namespace ShopModule.Forms
             LButtonHoverEffect(btnAccess_Ventas);
             LButtonHoverEffect(btnAccess_Usuarios);
 
-            if (!(user.Type == UserType.Admon))
+            if (!(user.Type == UserType.Administrador))
             {
                 btnAccess_Usuarios.Visible = false;
                 btnAccess_Productos.Visible = false;
@@ -60,7 +60,7 @@ namespace ShopModule.Forms
 
         public override void btnClose_Click(object sender, EventArgs e)
         {
-            base.btnClose_Click(sender, e);
+            Environment.Exit(0);
         }
 
         private void btnAccess_Usuarios_Click(object sender, EventArgs e)
@@ -87,6 +87,15 @@ namespace ShopModule.Forms
         {
             pnlMain.Controls.Clear();
             pnlMain.Controls.Add(new ProductsForm()
+            {
+                Dock = DockStyle.Fill
+            });
+        }
+
+        private void btnAccess_Ventas_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(new SellForn()
             {
                 Dock = DockStyle.Fill
             });

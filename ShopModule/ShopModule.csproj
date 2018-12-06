@@ -62,6 +62,7 @@
     <Compile Include="Classes\Controllers\SellController.cs" />
     <Compile Include="Classes\Controllers\UserController.cs" />
     <Compile Include="Classes\Misc\Miscs.cs" />
+    <Compile Include="Classes\Misc\Ticket.cs" />
     <Compile Include="Classes\Models\Brand.cs" />
     <Compile Include="Classes\Models\Buy.cs" />
     <Compile Include="Classes\Models\Category.cs" />
@@ -134,11 +135,17 @@
     <Compile Include="Forms\ProductsActions\CategoryActions\CategoryModifyForm.Designer.cs">
       <DependentUpon>CategoryModifyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductsActions\ProductFormAdd.cs">
+    <Compile Include="Forms\ProductsActions\ProductFormAdd1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductsActions\ProductFormAdd.Designer.cs">
-      <DependentUpon>ProductFormAdd.cs</DependentUpon>
+    <Compile Include="Forms\ProductsActions\ProductFormAdd1.Designer.cs">
+      <DependentUpon>ProductFormAdd1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\ProductModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsActions\ProductModifyForm.Designer.cs">
+      <DependentUpon>ProductModifyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProductsActions\Recipes\RecipesGenerator.cs">
       <SubType>Form</SubType>
@@ -157,6 +164,12 @@
     </Compile>
     <Compile Include="Forms\ProfileForm.Designer.cs">
       <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SellForn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SellForn.Designer.cs">
+      <DependentUpon>SellForn.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>UserControl</SubType>
@@ -220,8 +233,11 @@
     <EmbeddedResource Include="Forms\ProductsActions\CategoryActions\CategoryModifyForm.resx">
       <DependentUpon>CategoryModifyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductsActions\ProductFormAdd.resx">
-      <DependentUpon>ProductFormAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ProductsActions\ProductFormAdd1.resx">
+      <DependentUpon>ProductFormAdd1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsActions\ProductModifyForm.resx">
+      <DependentUpon>ProductModifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductsActions\Recipes\RecipesGenerator.resx">
       <DependentUpon>RecipesGenerator.cs</DependentUpon>
@@ -231,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SellForn.resx">
+      <DependentUpon>SellForn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>

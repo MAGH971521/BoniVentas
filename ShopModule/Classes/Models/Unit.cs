@@ -8,14 +8,19 @@ namespace ShopModule.Classes.Models
 {
     public enum Unit
     {
-        KG = 0,
-        G,
-        mG,
-        LB,
-        mL,
-        L,
-        Gal,
-        PZ,
-        OZ
+        Metro,
+        MetroCuadrado,
+        Pies,
+        Kilogramo,
+        Miligramo,
+        Gramo,
+        Onza,
+        Taza,
+        Cucharada,
+        Tonelada,
+        Litro,
+        Mililitro,
+        Galon,
+        Pieza,
     }
 }
