@@ -60,7 +60,7 @@ namespace ShopModule.Forms
 
         public override void btnClose_Click(object sender, EventArgs e)
         {
-            base.btnClose_Click(sender, e);
+            Environment.Exit(0);
         }
 
         private void btnAccess_Usuarios_Click(object sender, EventArgs e)

@@ -1,5 +1,7 @@
 ﻿using LiteDB;
 using ShopModule.Classes.Controllers;
+using ShopModule.Classes.Misc;
+using ShopModule.Classes.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,23 +41,31 @@ namespace ShopModule.Forms
                 try
                 {
                     MailMessage mail = new MailMessage();
-                    SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
-
+                    User user = controller.Select(Query.EQ("EmailAddress", txtMail.Text))[0];
+                    if (user == null) return;
 
                     mail.From = new MailAddress("magh1521@gmail.com");
                     mail.To.Add(txtMail.Text);
                     mail.Subject = "Recovery Password";
-                    mail.Body = "Your password is: " + controller.Select(Query.EQ("EmailAddress",txtMail.Text))[0].ToString();
+                    mail.Body = "Your password is: " + Miscs.DecryptPassword(user.Pswd);
 
+                    
+                    User admon = controller.Select(Query.EQ("Type", "Admon"))[0];
+                    SmtpClient smtpServer =  new SmtpClient();
+                    smtpServer.Host = "smtp.gmail.com";
                     smtpServer.Port = 587;
-                    smtpServer.Credentials = new System.Net.NetworkCredential("magh1521@gmail.com", "15211476");
+                    smtpServer.EnableSsl = true;
+                    smtpServer.Credentials = new System.Net.NetworkCredential("magh1521@gmail.com".Trim(), Miscs.DecryptPassword(Miscs.MailPSWD).Trim());
+                    smtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtpServer.Send(mail);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
+                    this.Hide();
+                    txtMail.Clear();
                 }
-                this.Close();
             }
             else
             {

@@ -16,7 +16,7 @@ namespace ShopModule.Forms.ProductsActions.Recipes
     public partial class RecipesGenerator : TemplateForm
     {
         private Product product;
-        private Recipe recipe;
+        private Recipe recipe = new Recipe();
         private RecipeDescription[] desc;
         public RecipesGenerator(Product product)
         {
@@ -60,10 +60,11 @@ namespace ShopModule.Forms.ProductsActions.Recipes
             ProductController productController = new ProductController();
             RecipeDescription aux = new RecipeDescription();
             if (cbProductos.SelectedIndex == 0) return;
-            aux.Product = productController.Select(Query.EQ("Name", cbProductos.SelectedValue.ToString()))[0];
+            aux.Product = productController.Select(Query.EQ("Name", cbProductos.SelectedItem.ToString()))[0];
             if (txtUnits.Text == "") aux.Units = 0;
             else aux.Units = Convert.ToInt32(txtUnits.Text);
-            desc[desc.Length] = aux;
+            if (desc == null) desc = new RecipeDescription[] { aux };
+            else desc = desc.Concat(new RecipeDescription[] { aux }).ToArray();
 
             dgProductsRecipe.DataSource = desc;
         }

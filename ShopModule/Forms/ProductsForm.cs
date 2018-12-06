@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ShopModule.Classes.Controllers;
 using LiteDB;
 using ShopModule.Forms.ProductsActions;
+using ShopModule.Classes.Models;
 
 namespace ShopModule.Forms
 {
@@ -32,10 +33,34 @@ namespace ShopModule.Forms
             {
                 cbBrand.Items.Add(item.Description);
             }
-            foreach(var item in catController.Select(Query.All()))
+            foreach (var item in catController.Select(Query.All()))
             {
                 cbCategory.Items.Add(item.Description);
             }
+
+            RefreshData();
+        }
+
+        private void RefreshData()
+        {
+            CategoryController catController = new CategoryController();
+            BrandController brandController = new BrandController();
+            ProductController productController = new ProductController();
+
+            foreach (var item in brandController.Select(Query.All()))
+            {
+                cbBrand.Items.Add(item.Description);
+            }
+            foreach (var item in catController.Select(Query.All()))
+            {
+                cbCategory.Items.Add(item.Description);
+            }
+            for (int c = 0; c < dgProducts.Rows.Count; c += 1)
+            {
+                Product p = (Product)dgProducts.Rows[c].DataBoundItem;
+                // dgProducts.Rows[c].Cells["Category"].Value = p.Category.Description.ToString();
+            }
+            dgProducts.DataSource = productController.Select(Query.All());
         }
 
         private void HideColumns()
@@ -63,8 +88,14 @@ namespace ShopModule.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ProductFormAdd add = new ProductFormAdd();
-            add.Show();
+            ProductFormAdd1 add = new ProductFormAdd1();
+            ProductController controller = new ProductController();
+            if (add.ShowDialog() == DialogResult.Yes)
+            {
+                dgProducts.DataSource = controller.Select(Query.All());
+                RefreshData();
+                return;
+            }
 
             cbBrand.Items.Clear();
             cbCategory.Items.Clear();
@@ -81,6 +112,14 @@ namespace ShopModule.Forms
             {
                 cbCategory.Items.Add(item.Description);
             }
+
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

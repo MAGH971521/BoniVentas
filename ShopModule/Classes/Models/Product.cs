@@ -10,7 +10,6 @@ namespace ShopModule.Classes.Models
         [BsonRef("Category")]
         public Category Category { get; set; }
 
-        [BsonRef("Unit")]
         public Unit Unit { get; set; }
 
         [BsonRef("Brand")]

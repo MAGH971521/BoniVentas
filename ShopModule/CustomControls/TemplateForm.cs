@@ -48,7 +48,7 @@ namespace ShopModule
 
         public virtual void btnClose_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            this.Hide();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace ShopModule.Forms.ProductsActions
 {
-    public partial class ProductFormAdd : TemplateForm
+    public partial class ProductFormAdd1 : TemplateForm
     {
-        public ProductFormAdd()
+        public ProductFormAdd1()
         {
             InitializeComponent();
             this.WindowName.Text = "Productos - Agregar";
-
+            cbUnit.DataSource = Enum.GetNames(typeof(Unit));
             ReloadCategoryBox();
             ReloadBrandBox();
         }
@@ -31,6 +31,7 @@ namespace ShopModule.Forms.ProductsActions
 
         private void ReloadCategoryBox()
         {
+            cbCategory.Items.Clear();
             CategoryController catController = new CategoryController();
             foreach (var item in catController.Select(Query.All()))
             {
@@ -40,6 +41,7 @@ namespace ShopModule.Forms.ProductsActions
 
         private void ReloadBrandBox()
         {
+            cbBrand.Items.Clear();
             BrandController catController = new BrandController();
             foreach (var item in catController.Select(Query.All()))
             {
@@ -70,7 +72,7 @@ namespace ShopModule.Forms.ProductsActions
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            if(cbCategory.SelectedValue.ToString() != "All")
+            if(cbCategory.SelectedItem.ToString() != "All")
             {
                 CategoryController controller = new CategoryController();
                 if (MessageBox.Show("¿Esta seguro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
@@ -87,6 +89,7 @@ namespace ShopModule.Forms.ProductsActions
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             ClearFields();
             this.Hide();
         }
@@ -104,16 +107,26 @@ namespace ShopModule.Forms.ProductsActions
             CategoryController categoryController = new CategoryController();
             BrandController brandController = new BrandController();
             ProductController productController = new ProductController();
+
             if (txtName.Text == "") return;
             prod.Name = txtName.Text;
-            
-            prod.Category = categoryController.Select(Query.EQ("Description", cbCategory.SelectedItem.ToString()))[0];
-            prod.Brand = brandController.Select(Query.EQ("Description", cbBrand.SelectedItem.ToString()))[0];
+
+
+            prod.Category = categoryController.Select(Query.EQ("Description", cbCategory.SelectedText))[0];
+            prod.Brand = brandController.Select(Query.EQ("Description", cbBrand.SelectedText))[0];
             prod.Min = (txtMin.Text == "" ? 0 : Convert.ToInt32(txtMin.Text));
             prod.Max = (txtMax.Text == "" ? 1000 : Convert.ToInt32(txtMax.Text));
             prod.Stock = 0;
             prod.Cost = 0;
             prod.Price = 0;
+            if (cbUnit.SelectedValue.ToString() == "") prod.Unit = Unit.Pieza;
+            else
+            {
+                Unit unit;
+                Enum.TryParse(cbUnit.SelectedValue.ToString(), out unit);
+                prod.Unit = unit;
+            }
+
             if (radYes.Checked)
             {
                 RecipesGenerator recipe = new RecipesGenerator(prod);
@@ -124,6 +137,7 @@ namespace ShopModule.Forms.ProductsActions
                 }
                 return;
             }
+            this.DialogResult = DialogResult.OK;
             productController.Add(prod);
             ClearFields();
             this.Hide();
