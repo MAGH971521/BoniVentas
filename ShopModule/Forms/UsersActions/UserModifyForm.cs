@@ -36,7 +36,7 @@ namespace ShopModule.Forms.UsersActions
             txtLastName.Text = oldUser.LastName;
             dpBirth.Value = oldUser.Birthday;
             txtMail.Text = oldUser.EmailAddress;
-            cbUserType.SelectedIndex = (oldUser.Type == UserType.Admon ? 0 : 1);
+            cbUserType.SelectedIndex = (oldUser.Type == UserType.Administrador ? 0 : 1);
         }
 
         private bool ValidateEmail(string mail)

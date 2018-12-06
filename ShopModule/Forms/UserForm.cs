@@ -55,7 +55,7 @@ namespace ShopModule.Forms
 
         private void btnMod_Click(object sender, EventArgs e)
         {
-            if(dgUsers.SelectedRows.Count > 0)
+            if(dgUsers.SelectedRows.Count == 1)
             {
                 var helper = dgUsers.SelectedRows[0].Cells;
                 UserType type;
@@ -84,19 +84,17 @@ namespace ShopModule.Forms
         {
             if(dgUsers.SelectedRows.Count > 0)
             {
-                var cells = dgUsers.SelectedRows[0].Cells;
                 UserController controller = new UserController();
 
 
                 var helper = dgUsers.SelectedRows[0].Cells;
-                UserType type;
-                Enum.TryParse(helper[7].ToString(), out type);
                 
                 User user = new User();
                 user.Id = Convert.ToInt32(helper[0].Value.ToString());
 
                 if(MessageBox.Show("¿Esta seguro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
+                    controller.Delete(controller.Select(Query.EQ("Id", user.Id))[0]);
                     dgUsers.DataSource = controller.Select(Query.All());
                 }
                 else

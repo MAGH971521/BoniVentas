@@ -21,7 +21,7 @@ namespace ShopModule.Forms
             ProductController controller = new ProductController();
             InitializeComponent();
             dgProducts.DataSource = controller.Select(Query.All());
-            dgProducts.ReadOnly = false;
+            dgProducts.ReadOnly = true;
 
             CategoryController catController = new CategoryController();
             BrandController brandController = new BrandController();
@@ -47,6 +47,8 @@ namespace ShopModule.Forms
             BrandController brandController = new BrandController();
             ProductController productController = new ProductController();
 
+            cbBrand.Items.Clear();
+            cbCategory.Items.Clear();
             foreach (var item in brandController.Select(Query.All()))
             {
                 cbBrand.Items.Add(item.Description);
@@ -55,18 +57,12 @@ namespace ShopModule.Forms
             {
                 cbCategory.Items.Add(item.Description);
             }
-            for (int c = 0; c < dgProducts.Rows.Count; c += 1)
-            {
-                Product p = (Product)dgProducts.Rows[c].DataBoundItem;
-                // dgProducts.Rows[c].Cells["Category"].Value = p.Category.Description.ToString();
-            }
             dgProducts.DataSource = productController.Select(Query.All());
         }
 
         private void HideColumns()
         {
-            dgProducts.Columns[0].Visible = false;
-            dgProducts.Columns[5].Visible = false;
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -103,23 +99,75 @@ namespace ShopModule.Forms
             BrandController brandController = new BrandController();
             cbBrand.Items.Add("All");
             cbCategory.Items.Add("All");
-
-            foreach (var item in brandController.Select(Query.All()))
-            {
-                cbBrand.Items.Add(item.Description);
-            }
-            foreach (var item in catController.Select(Query.All()))
-            {
-                cbCategory.Items.Add(item.Description);
-            }
-
-
-
+            RefreshData();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (dgProducts.SelectedRows.Count > 0)
+            {
+                ProductController controller = new ProductController();
 
+
+                var helper = dgProducts.SelectedRows[0].Cells;
+
+                Product prod = new Product();
+                prod.Id = Convert.ToInt32(helper["Id"].Value.ToString());
+                prod.Name = helper["Name"].Value.ToString();
+
+                if (MessageBox.Show("¿Esta seguro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    RecipeController delete = new RecipeController();
+                    foreach (var item in delete.Select(Query.EQ("Name", prod.Name)))
+                    {
+                        delete.Delete(item);
+                    }
+                    controller.Delete(controller.Select(Query.EQ("Id", prod.Id))[0]);
+                    dgProducts.DataSource = controller.Select(Query.All());
+                }
+                else
+                {
+                    prod = null;
+                }
+                dgProducts.DataSource = controller.Select(Query.All());
+            }
+        }
+
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            if(dgProducts.SelectedRows.Count == 1)
+            {
+                var helper = dgProducts.SelectedRows[0].Cells;
+                Unit unit;
+                Enum.TryParse(helper["Unit"].ToString(), out unit);
+
+                Product prod = new Product();
+                prod.Id = Convert.ToInt32(helper["Id"].Value.ToString());
+                prod.Name = helper["Name"].Value.ToString();
+                prod.Category = helper["Category"].Value.ToString();
+                prod.Unit = unit;
+                prod.Brand = helper["Brand"].Value.ToString();
+                prod.IsCompost = Convert.ToBoolean(helper["IsCompost"].Value);
+                prod.Min = Convert.ToInt32(helper["Min"].Value);
+                prod.Max = Convert.ToInt32(helper["Max"].Value);
+
+                ProductModifyForm add = new ProductModifyForm(prod);
+                ProductController controller = new ProductController();
+                if (add.ShowDialog() == DialogResult.Yes)
+                {
+                    dgProducts.DataSource = controller.Select(Query.All());
+                    RefreshData();
+                    return;
+                }
+
+                cbBrand.Items.Clear();
+                cbCategory.Items.Clear();
+                CategoryController catController = new CategoryController();
+                BrandController brandController = new BrandController();
+                cbBrand.Items.Add("All");
+                cbCategory.Items.Add("All");
+                RefreshData();
+            }
         }
     }
 }

@@ -6,14 +6,13 @@ namespace ShopModule.Classes.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
-        [BsonRef("Category")]
-        public Category Category { get; set; }
+        
+        public string Category { get; set; }
 
         public Unit Unit { get; set; }
-
-        [BsonRef("Brand")]
-        public Brand Brand { get; set; }
+        
+        public string Brand { get; set; }
+        public bool IsCompost { get; set; }
 
         public int Min { get; set; }
         public int Max { get; set; }

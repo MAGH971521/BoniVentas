@@ -1,6 +1,6 @@
 ﻿namespace ShopModule.Forms.ProductsActions
 {
-    partial class ProductFormAdd1
+    partial class ProductModifyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductFormAdd1));
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductModifyForm));
+            this.btnCancel = new ShopModule.CustomControls.FlatButton();
+            this.btnAccept = new ShopModule.CustomControls.FlatButton();
             this.borderPanel1 = new ShopModule.CustomControls.BorderPanel();
             this.cbUnit = new ShopModule.CustomControls.CustomComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,8 +52,7 @@
             this.cbCategory = new ShopModule.CustomControls.CustomComboBox();
             this.lblParam3 = new System.Windows.Forms.Label();
             this.txtName = new ShopModule.CustomControls.CustomTextBox();
-            this.btnCancel = new ShopModule.CustomControls.FlatButton();
-            this.btnAccept = new ShopModule.CustomControls.FlatButton();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.borderPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,14 +71,36 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Location = new System.Drawing.Point(665, 0);
             // 
-            // label1
+            // btnCancel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre:";
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(549, 243);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 30);
+            this.btnCancel.TabIndex = 28;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAccept.FlatAppearance.BorderSize = 0;
+            this.btnAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccept.ForeColor = System.Drawing.Color.White;
+            this.btnAccept.Location = new System.Drawing.Point(427, 243);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(100, 30);
+            this.btnAccept.TabIndex = 27;
+            this.btnAccept.Text = "Aceptar";
+            this.btnAccept.UseVisualStyleBackColor = false;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // borderPanel1
             // 
@@ -103,10 +125,10 @@
             this.borderPanel1.Controls.Add(this.lblParam3);
             this.borderPanel1.Controls.Add(this.txtName);
             this.borderPanel1.Controls.Add(this.label1);
-            this.borderPanel1.Location = new System.Drawing.Point(48, 58);
+            this.borderPanel1.Location = new System.Drawing.Point(52, 58);
             this.borderPanel1.Name = "borderPanel1";
             this.borderPanel1.Size = new System.Drawing.Size(597, 161);
-            this.borderPanel1.TabIndex = 9;
+            this.borderPanel1.TabIndex = 26;
             // 
             // cbUnit
             // 
@@ -331,49 +353,25 @@
             this.txtName.Size = new System.Drawing.Size(238, 20);
             this.txtName.TabIndex = 2;
             // 
-            // btnCancel
+            // label1
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(545, 244);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 30);
-            this.btnCancel.TabIndex = 25;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nombre:";
             // 
-            // btnAccept
+            // ProductModifyForm
             // 
-            this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAccept.FlatAppearance.BorderSize = 0;
-            this.btnAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccept.ForeColor = System.Drawing.Color.White;
-            this.btnAccept.Location = new System.Drawing.Point(423, 244);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(100, 30);
-            this.btnAccept.TabIndex = 24;
-            this.btnAccept.Text = "Aceptar";
-            this.btnAccept.UseVisualStyleBackColor = false;
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
-            // 
-            // ProductFormAdd1
-            // 
-            this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(700, 300);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.borderPanel1);
-            this.Name = "ProductFormAdd1";
-            this.Text = "ProductFormAdd";
+            this.Name = "ProductModifyForm";
+            this.Text = "ProductModifyForm";
             this.Controls.SetChildIndex(this.borderPanel1, 0);
             this.Controls.SetChildIndex(this.btnAccept, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
@@ -386,29 +384,29 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private CustomControls.BorderPanel borderPanel1;
-        private CustomControls.CustomTextBox txtName;
-        private CustomControls.CustomComboBox cbCategory;
-        private System.Windows.Forms.Label lblParam3;
-        private CustomControls.RoundButton btnDeleteCategory;
-        private CustomControls.RoundButton btnModifyCategory;
-        private CustomControls.RoundButton btnAddCategory;
-        private CustomControls.FieldBox txtMax;
-        private CustomControls.FieldBox txtMin;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private CustomControls.FlatButton btnCancel;
         private CustomControls.FlatButton btnAccept;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radNo;
-        private System.Windows.Forms.RadioButton radYes;
+        private CustomControls.BorderPanel borderPanel1;
+        private CustomControls.CustomComboBox cbUnit;
+        private System.Windows.Forms.Label label4;
         private CustomControls.RoundButton btnDeleteBrand;
         private CustomControls.RoundButton btnModifyBrand;
         private CustomControls.RoundButton btnAddBrand;
         private System.Windows.Forms.Label label3;
         private CustomControls.CustomComboBox cbBrand;
-        private CustomControls.CustomComboBox cbUnit;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton radNo;
+        private System.Windows.Forms.RadioButton radYes;
+        private System.Windows.Forms.Label label2;
+        private CustomControls.FieldBox txtMax;
+        private System.Windows.Forms.Label label7;
+        private CustomControls.FieldBox txtMin;
+        private System.Windows.Forms.Label label6;
+        private CustomControls.RoundButton btnDeleteCategory;
+        private CustomControls.RoundButton btnModifyCategory;
+        private CustomControls.RoundButton btnAddCategory;
+        private CustomControls.CustomComboBox cbCategory;
+        private System.Windows.Forms.Label lblParam3;
+        private CustomControls.CustomTextBox txtName;
+        private System.Windows.Forms.Label label1;
     }
 }

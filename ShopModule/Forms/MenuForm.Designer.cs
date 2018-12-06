@@ -151,6 +151,7 @@
             this.btnAccess_Ventas.Text = "Ventas";
             this.btnAccess_Ventas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccess_Ventas.UseVisualStyleBackColor = true;
+            this.btnAccess_Ventas.Click += new System.EventHandler(this.btnAccess_Ventas_Click);
             // 
             // btnAccess_Compras
             // 

@@ -80,7 +80,7 @@ namespace ShopModule.Classes.Misc
                 user.Name = "John";
                 user.Birthday = DateTime.Now;
                 user.LastName = "Smith";
-                user.Type = UserType.Admon;
+                user.Type = UserType.Administrador;
 
                 try
                 {

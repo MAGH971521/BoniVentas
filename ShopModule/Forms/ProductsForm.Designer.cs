@@ -181,6 +181,7 @@
             this.btnMod.TabIndex = 11;
             this.btnMod.Text = "Modificar";
             this.btnMod.UseVisualStyleBackColor = false;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             // 
             // btnEliminar
             // 
